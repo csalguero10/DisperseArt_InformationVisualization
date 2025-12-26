@@ -54,68 +54,70 @@ def scrape_object_details(object_url, session, category):
         
         details = {
             'id': object_url.rstrip('/').split('/')[-1],
-            'url': object_url,
-            'category': category
+            'category': category,
+            'url': object_url
         }
         
-        # Extraer todos los campos del objeto
-        # Buscar todos los divs que contienen información
+        # Buscar todos los divs mb-3 que contienen campos
         content_divs = soup.find_all('div', class_='mb-3')
         
         for div in content_divs:
-            text = div.get_text(separator='|', strip=True)
+            # Obtener el texto completo del div para identificar el label
+            div_text = div.get_text(strip=True)
             
-            # Separar label y valor
-            if ':' in text:
-                parts = text.split(':', 1)
-                if len(parts) == 2:
-                    label = clean_text(parts[0])
-                    value = clean_text(parts[1])
-                    
-                    # Mapear campos
-                    if label == 'Name':
-                        details['name'] = value
-                    elif label == 'Author':
-                        details['author'] = value
-                    elif label == 'Type':
-                        details['type'] = value
-                    elif label == 'Date':
-                        details['date'] = value
-                    elif label == 'Original name':
-                        details['original_name'] = value
-                    elif 'Circumstances' in label or 'Details of theft' in label:
-                        details['circumstances'] = value
-                    elif 'Year of the incident' in label:
-                        details['year_incident'] = value
-                    elif 'Place of the incident' in label:
-                        details['place_incident'] = value
-                        # Intentar extraer coordenadas
-                        lat, lon = extract_coordinates(value)
-                        if lat and lon:
-                            details['latitude'] = lat
-                            details['longitude'] = lon
-                    elif 'country' in label.lower():
-                        details['country'] = value
-                    elif 'Museum' in label or 'Gallery' in label:
-                        details['museum_origin'] = value
+            # Buscar el div con clase mb-3 que contiene el label
+            label_div = div.find('div', class_='mb-3', recursive=False)
+            if not label_div:
+                label_div = div.find('div', class_=False, recursive=False)
+            
+            label_text = ""
+            if label_div:
+                label_text = clean_text(label_div.get_text())
+            else:
+                # Tomar el texto antes del div yellow
+                for content in div.children:
+                    if isinstance(content, str):
+                        label_text = clean_text(content)
+                        break
+            
+            # Buscar el div yellow o js_visibility_target que contiene el valor
+            value_div = div.find('div', class_=['yellow', 'js_visibility_target', 'yellow js_visibility_target'])
+            if value_div:
+                value_text = clean_text(value_div.get_text())
+                
+                # Mapear según el label - usar el texto completo del div para identificar
+                if 'Name:' in div_text or 'Name' == label_text:
+                    details['name'] = value_text
+                elif 'Author:' in div_text or 'Author' == label_text:
+                    details['author'] = value_text
+                elif 'Type:' in div_text or 'Type' == label_text:
+                    details['type'] = value_text
+                elif 'Date:' in div_text or 'Date' == label_text:
+                    details['date'] = value_text
+                elif ('Circumstances:' in div_text or 'Details of theft' in div_text) and 'circumstances' not in details:
+                    details['circumstances'] = value_text
+                elif 'Year of the incident:' in div_text or 'Year of the incident' in label_text:
+                    details['year_incident'] = value_text
+                elif 'Place of the incident:' in div_text or 'Place of the incident' in label_text:
+                    details['place_incident'] = value_text
+                elif ('Coordinates (Lat, Lon):' in div_text or 'Coordinates:' in div_text) and 'coordinates_found' not in details:
+                    # Marcar que encontramos coordenadas pero no las guardamos
+                    details['coordinates_found'] = True
         
-        # Buscar descripción en divs con clase yellow
-        yellow_divs = soup.find_all('div', class_='yellow')
-        for div in yellow_divs:
-            text = clean_text(div.get_text())
-            if len(text) > 30 and 'description' not in details:
-                details['description'] = text[:1000]
-                break
-        
-        # Buscar enlaces
-        links = []
+        # Buscar el link de Google Maps
+        google_maps_link = None
         for link in soup.find_all('a', href=True):
             href = link.get('href', '').strip()
-            if href.startswith('http') and 'facebook' in href or 'google' in href:
-                if href not in links:
-                    links.append(href)
+            if 'maps.google.com' in href or 'google.com/maps' in href:
+                google_maps_link = href
+                break
         
-        details['links'] = '; '.join(links) if links else ''
+        if google_maps_link:
+            details['google_maps_link'] = google_maps_link
+        
+        # Limpiar campo temporal
+        if 'coordinates_found' in details:
+            del details['coordinates_found']
         
         return details
     
@@ -168,76 +170,81 @@ def scrape_category(category_name, category_url, session):
             object_links = extract_object_links_from_page(soup, category_url)
             
             if not object_links:
-                if page == 1:
-                    print(f"  ⚠ No se encontraron objetos en la primera página")
-                else:
-                    print(f"  ✓ No hay más objetos en esta categoría (total páginas: {page-1})")
+                print(f"   ⚠ No se encontraron más objetos en esta página")
                 break
             
-            print(f"  Encontrados {len(object_links)} objetos en esta página")
+            print(f"   → Encontrados {len(object_links)} objetos en esta página")
             
-            # Verificar si son objetos nuevos o duplicados
-            new_objects = 0
-            duplicates = 0
+            # Contar cuántos objetos son nuevos
+            new_objects_count = 0
+            duplicates_count = 0
             
-            # Extraer detalles de cada objeto
-            for i, obj_url in enumerate(object_links, 1):
+            for obj_url in object_links:
                 obj_id = obj_url.rstrip('/').split('/')[-1]
                 
-                # Si ya vimos este objeto, es un duplicado
                 if obj_id in seen_ids:
-                    duplicates += 1
-                    print(f"    [{i}/{len(object_links)}] {obj_url} [DUPLICADO]")
+                    duplicates_count += 1
                     continue
                 
                 seen_ids.add(obj_id)
-                print(f"    [{i}/{len(object_links)}] {obj_url}", end=' ')
+                new_objects_count += 1
                 
-                obj_data = scrape_object_details(obj_url, session, category_name)
+                print(f"   [{len(category_objects)+1}] Extrayendo: {obj_id}")
                 
-                if obj_data:
-                    category_objects.append(obj_data)
-                    new_objects += 1
-                    print(f"✓")
+                # Extraer detalles
+                obj_details = scrape_object_details(obj_url, session, category_name)
+                
+                if obj_details:
+                    category_objects.append(obj_details)
+                    print(f"      ✓ Extraído: {obj_details.get('name', 'Sin nombre')[:50]}")
                 else:
-                    print(f"✗")
+                    print(f"      ✗ No se pudieron extraer detalles")
             
-            # Si todos los objetos son duplicados, hemos terminado
-            if duplicates == len(object_links):
+            print(f"\n   📊 Resumen de página {page}:")
+            print(f"      Objetos nuevos: {new_objects_count}")
+            print(f"      Duplicados: {duplicates_count}")
+            
+            # Si todos los objetos eran duplicados, incrementar contador
+            if new_objects_count == 0:
                 consecutive_duplicates += 1
-                print(f"\n  ⚠ TODOS los objetos en esta página son duplicados ({consecutive_duplicates}° página duplicada)")
+                print(f"   ⚠ Página completamente duplicada ({consecutive_duplicates} consecutivas)")
                 
-                # Si encontramos 2 páginas consecutivas con duplicados, terminamos
+                # Si hay 2 páginas consecutivas con solo duplicados, asumir que terminamos
                 if consecutive_duplicates >= 2:
-                    print(f"  ✓ Fin de categoría detectado (páginas duplicadas)")
+                    print(f"   → Detectadas {consecutive_duplicates} páginas consecutivas duplicadas")
+                    print(f"   → Asumiendo fin de categoría")
                     break
             else:
-                consecutive_duplicates = 0  # Resetear contador si hay objetos nuevos
+                consecutive_duplicates = 0
             
-            print(f"\n  Subtotal categoría: {len(category_objects)} objetos")
-            print(f"  Nuevos en esta página: {new_objects} | Duplicados: {duplicates}")
+            # Verificar si hay botón "Next" o paginación
+            pagination = soup.find('ul', class_='pagination')
+            has_next = False
             
-            # Si hay menos de 10 objetos, probablemente es la última página
-            if len(object_links) < 10:
-                print(f"  ℹ Última página detectada (menos de 10 objetos)")
-                break
+            if pagination:
+                next_link = pagination.find('a', {'rel': 'next'})
+                has_next = next_link is not None
             
-            # Si no hay objetos nuevos, también terminamos
-            if new_objects == 0:
-                print(f"  ✓ No hay objetos nuevos, fin de categoría")
+            if not has_next and new_objects_count == 0:
+                print(f"   → No hay más páginas disponibles")
                 break
             
             page += 1
             time.sleep(1)  # Pausa entre páginas
             
+        except requests.exceptions.RequestException as e:
+            print(f"\n✗ Error de red en página {page}: {e}")
+            break
         except Exception as e:
-            print(f"\n  Error en página {page}: {e}")
+            print(f"\n✗ Error inesperado en página {page}: {e}")
+            import traceback
+            traceback.print_exc()
             break
     
     return category_objects
 
-def scrape_all_categories(categories=CATEGORIES, test_mode=False):
-    """Scraper principal que recorre todas las categorías"""
+def scrape_all_categories(test_mode=False, categories=CATEGORIES, max_objects_test=5):
+    """Scraper principal que procesa todas las categorías"""
     
     session = requests.Session()
     session.headers.update({
@@ -254,7 +261,20 @@ def scrape_all_categories(categories=CATEGORIES, test_mode=False):
     
     for category_name, category_url in categories_to_process.items():
         try:
+            # En modo test, verificar si ya alcanzamos el límite
+            if test_mode and len(all_objects) >= max_objects_test:
+                print(f"\n{'='*70}")
+                print(f"✓ MODO TEST: Se alcanzó el límite de {max_objects_test} objetos")
+                print(f"{'='*70}")
+                break
+            
             category_objects = scrape_category(category_name, category_url, session)
+            
+            # En modo test, limitar cuántos objetos agregar
+            if test_mode:
+                remaining = max_objects_test - len(all_objects)
+                category_objects = category_objects[:remaining]
+            
             all_objects.extend(category_objects)
             
             print(f"\n{'='*70}")
@@ -264,8 +284,12 @@ def scrape_all_categories(categories=CATEGORIES, test_mode=False):
             
             # GUARDAR PROGRESO después de cada categoría
             if all_objects:
-                save_to_csv(all_objects, 'stolen_objects_ukraine_progress.csv')
-                print(f"💾 Progreso guardado automáticamente ({len(all_objects)} objetos)")
+                print(f"\n💾 Guardando progreso automático...")
+                saved = save_to_csv(all_objects, 'stolen_objects_ukraine_progress.csv')
+                if saved:
+                    print(f"✓ Progreso guardado: {len(all_objects)} objetos")
+                else:
+                    print(f"✗ Error al guardar progreso")
             
             time.sleep(2)  # Pausa entre categorías
             
@@ -273,7 +297,9 @@ def scrape_all_categories(categories=CATEGORIES, test_mode=False):
             print(f"\n\n⚠ Interrupción detectada por el usuario")
             print(f"💾 Guardando progreso antes de salir...")
             if all_objects:
-                save_to_csv(all_objects, 'stolen_objects_ukraine_interrupted.csv')
+                saved = save_to_csv(all_objects, 'stolen_objects_ukraine_interrupted.csv')
+                if not saved:
+                    print(f"✗ No se pudo guardar el progreso")
             raise
             
         except Exception as e:
@@ -287,35 +313,52 @@ def save_to_csv(objects, filename='stolen_objects_ukraine.csv'):
     
     if not objects:
         print("\n⚠ No hay objetos para guardar")
-        return
+        return False
     
-    # Definir campos en orden específico
-    fieldnames = [
-        'id', 'url', 'category', 'name', 'author', 'type', 'date', 
-        'original_name', 'circumstances', 'year_incident', 'place_incident', 
-        'latitude', 'longitude', 'country', 'museum_origin', 'description', 'links'
-    ]
-    
-    # Agregar cualquier campo adicional que aparezca
-    all_fields = set()
-    for obj in objects:
-        all_fields.update(obj.keys())
-    
-    for field in all_fields:
-        if field not in fieldnames:
-            fieldnames.append(field)
-    
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+    try:
+        import os
         
-        for obj in objects:
-            row = {field: obj.get(field, '') for field in fieldnames}
-            writer.writerow(row)
-    
-    print(f"\n{'='*70}")
-    print(f"✓✓✓ DATOS GUARDADOS EN '{filename}' ✓✓✓")
-    print(f"{'='*70}")
+        # Obtener ruta absoluta
+        full_path = os.path.abspath(filename)
+        
+        # Definir campos en orden específico
+        fieldnames = [
+            'id', 'category', 'name', 'author', 'type', 'date', 
+            'year_incident', 'place_incident', 'google_maps_link',
+            'circumstances', 'url', 
+        ]
+        
+        print(f"\n{'='*70}")
+        print(f"💾 Guardando {len(objects)} objetos...")
+        print(f"📁 Ubicación: {full_path}")
+        print(f"{'='*70}")
+        
+        with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            
+            for obj in objects:
+                row = {field: obj.get(field, '') for field in fieldnames}
+                writer.writerow(row)
+        
+        # Verificar que el archivo se creó
+        if os.path.exists(filename):
+            file_size = os.path.getsize(filename)
+            file_size_mb = file_size / (1024 * 1024)
+            print(f"\n✓✓✓ ARCHIVO GUARDADO EXITOSAMENTE ✓✓✓")
+            print(f"📊 Tamaño: {file_size_mb:.2f} MB ({file_size:,} bytes)")
+            print(f"📁 Ubicación completa: {full_path}")
+            print(f"{'='*70}")
+            return True
+        else:
+            print(f"\n✗ ERROR: El archivo no se creó")
+            return False
+            
+    except Exception as e:
+        print(f"\n✗ ERROR al guardar CSV: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
 
 def print_statistics(objects):
     """Muestra estadísticas de los objetos extraídos"""
@@ -365,26 +408,37 @@ if __name__ == "__main__":
     print(f"\nFecha: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"Categorías a procesar: {len(CATEGORIES)}")
     
-    # MODO TEST: Solo 3 categorías (para pruebas rápidas)
-    print("\n⚠ MODO TEST ACTIVADO: Solo se procesarán las primeras 3 categorías")
-    print("   Cada categoría mostrará TODAS sus páginas (10 objetos por página)")
+    # MODO TEST: Solo 5 objetos (para pruebas rápidas)
+    print("\n⚠ MODO TEST ACTIVADO: Solo se extraerán los primeros 5 objetos")
     print("   Para procesar TODO, cambia test_mode=False en la línea siguiente\n")
     
-    #objects = scrape_all_categories(test_mode=True)
+    #objects = scrape_all_categories(test_mode=True, max_objects_test=5)
     
     # MODO COMPLETO: Descomentar la siguiente línea y comentar la anterior
     objects = scrape_all_categories(test_mode=False)
     
+    # Guardar resultados finales
     if objects:
-        save_to_csv(objects)
-        print_statistics(objects)
-        
         print(f"\n{'='*70}")
-        print("✓✓✓ SCRAPING COMPLETADO EXITOSAMENTE ✓✓✓")
-        print(f"{'='*70}")
-        print(f"\n📁 Archivos generados:")
-        print(f"   - stolen_objects_ukraine.csv (archivo final)")
-        print(f"   - stolen_objects_ukraine_progress.csv (respaldo automático)")
+        print(f"Preparando guardado final de {len(objects)} objetos...")
         print(f"{'='*70}\n")
+        
+        saved = save_to_csv(objects)
+        
+        if saved:
+            print_statistics(objects)
+            
+            print(f"\n{'='*70}")
+            print("✓✓✓ SCRAPING COMPLETADO EXITOSAMENTE ✓✓✓")
+            print(f"{'='*70}")
+            print(f"\n📁 Archivos generados:")
+            print(f"   ✓ stolen_objects_ukraine.csv (archivo final)")
+            print(f"   ✓ stolen_objects_ukraine_progress.csv (respaldo automático)")
+            print(f"{'='*70}\n")
+        else:
+            print(f"\n✗ ERROR: No se pudo guardar el archivo final")
+            print(f"Los datos están en memoria pero no se guardaron en disco")
+            print(f"Intenta ejecutar manualmente:")
+            print(f"   save_to_csv(objects, 'manual_save.csv')")
     else:
         print("\n⚠ No se pudieron extraer objetos")

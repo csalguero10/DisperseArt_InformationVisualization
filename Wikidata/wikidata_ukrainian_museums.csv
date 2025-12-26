@@ -1,0 +1,501 @@
+museum.type,museum.value,coord.datatype,coord.type,coord.value,museumLabel.xml:lang,museumLabel.type,museumLabel.value,locationLabel.xml:lang,locationLabel.type,locationLabel.value
+uri,http://www.wikidata.org/entity/Q12104642,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.655474 50.254927),en,literal,Zhytomyr Regional Museum,en,literal,Zhytomyr
+uri,http://www.wikidata.org/entity/Q12140604,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.5136 50.2416),uk,literal,Пирятинський районний народний краєзнавчий музей,en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q12080999,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.025186992 48.909932898),en,literal,Barvinkivsky Museum of Local History,en,literal,Barvinkove
+uri,http://www.wikidata.org/entity/Q12168040,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.298289859 48.172970041),uk,literal,Хустський краєзнавчий музей,en,literal,Khust
+uri,http://www.wikidata.org/entity/Q12097114,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.56666 49.17193),uk,literal,Городоцький краєзнавчий музей,en,literal,Horodok
+uri,http://www.wikidata.org/entity/Q12168040,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.298289859 48.172970041),uk,literal,Хустський краєзнавчий музей,en,literal,Zakarpattia Oblast
+uri,http://www.wikidata.org/entity/Q12075085,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.033024755 48.763578444),uk,literal,Історико-краєзнавчий музей села Бортники,en,literal,Tlumach Raion
+uri,http://www.wikidata.org/entity/Q12100498,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.529221138 49.826185504),uk,literal,Диканський державний історико-краєзнавчий музей ім. Д. М. Гармаша,en,literal,Dykanka
+uri,http://www.wikidata.org/entity/Q12168040,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.298289859 48.172970041),uk,literal,Хустський краєзнавчий музей,en,literal,Khust Raion
+uri,http://www.wikidata.org/entity/Q12122626,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.219680972 51.524493155),uk,literal,Менський краєзнавчий музей,en,literal,Koriukivka Raion
+uri,http://www.wikidata.org/entity/Q12122626,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.219680972 51.524493155),uk,literal,Менський краєзнавчий музей,en,literal,Mena
+uri,http://www.wikidata.org/entity/Q12116706,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.761173545 48.442015622),en,literal,Kitsman Historical Museum,en,literal,Kitsman
+uri,http://www.wikidata.org/entity/Q12130613,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.841724996 49.318120128),en,literal,Vahnivka museum,en,literal,Vakhnivka
+uri,http://www.wikidata.org/entity/Q12112129,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.647307211 49.013221614),en,literal,Horishni Plavni local history museum,en,literal,Horishni Plavni
+uri,http://www.wikidata.org/entity/Q12171675,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(27.068908355 50.179965925),en,literal,Shepetivka Local Museum,en,literal,Shepetivka
+uri,http://www.wikidata.org/entity/Q12118016,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.41624167 48.91566944),en,literal,Lysychansk Local History Museum,en,literal,Lysychansk
+uri,http://www.wikidata.org/entity/Q12075085,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.033024755 48.763578444),uk,literal,Історико-краєзнавчий музей села Бортники,en,literal,Bortniki
+uri,http://www.wikidata.org/entity/Q12075085,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.033024755 48.763578444),uk,literal,Історико-краєзнавчий музей села Бортники,en,literal,Ivano-Frankivsk Oblast
+uri,http://www.wikidata.org/entity/Q12122626,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.219680972 51.524493155),uk,literal,Менський краєзнавчий музей,en,literal,Chernihiv Oblast
+uri,http://www.wikidata.org/entity/Q12090003,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.191354631 50.077445853),uk,literal,Вовчицький краєзнавчий музей імені Івана Саєнка,en,literal,Vovchik
+uri,http://www.wikidata.org/entity/Q12075083,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.165483511 48.895242228),en,literal,Museum of Boykivshchyna culture and life,en,literal,Tsineva
+uri,http://www.wikidata.org/entity/Q12082169,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.250034406 50.316324246),uk,literal,Березоворудський народний історико-краєзнавчий музей,en,literal,Berezova Rudka
+uri,http://www.wikidata.org/entity/Q11787074,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(29.3912 48.81),en,literal,City Museum of Local History,en,literal,Haisyn
+uri,http://www.wikidata.org/entity/Q12105697,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.7320357 48.6461081),uk,literal,Заліщицький районний краєзнавчий музей,en,literal,Zalishchyky
+uri,http://www.wikidata.org/entity/Q12107009,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.97 50.28333333),en,literal,Zolochiv museum of local history,en,literal,"Zolochiv, Kharkiv Oblast"
+uri,http://www.wikidata.org/entity/Q12171945,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.003530604 49.87742817),uk,literal,Шишацький краєзнавчий музей,en,literal,Shyshaky
+uri,http://www.wikidata.org/entity/Q12171945,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.003530604 49.87742817),uk,literal,Шишацький краєзнавчий музей,en,literal,Myrhorod Raion
+uri,http://www.wikidata.org/entity/Q12114533,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.40452657 49.064157503),en,literal,Kremenchuk Local Lore Museum,en,literal,Kremenchuk
+uri,http://www.wikidata.org/entity/Q12123470,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.6124 49.96636),en,literal,Myrhorodsʹkyĭ krai͡eznavchyĭ muzeĭ,en,literal,Myrhorod
+uri,http://www.wikidata.org/entity/Q12149656,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.247777777 50.615277777),en,literal,Rivnensʹkyĭ oblasnyĭ krai͡eznavchyĭ muzeĭ,en,literal,Rivne Raion
+uri,http://www.wikidata.org/entity/Q12093268,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.438091851 47.944305035),uk,literal,Вільнянський краєзнавчий музей,en,literal,Vilniansk
+uri,http://www.wikidata.org/entity/Q12118560,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.98861111 50.01611111),uk,literal,Лубенський краєзнавчий музей імені Гната Стеллецького,en,literal,Lubny Raion
+uri,http://www.wikidata.org/entity/Q12118507,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.263549356 50.357057854),en,literal,Lokhvytsia local museum,en,literal,Lokhvytsia
+uri,http://www.wikidata.org/entity/Q12112410,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.204838 51.2389382),en,literal,Konotopsʹkyĭ misʹkyĭ krai͡eznavchyĭ muzeĭ im. O.M. Lazarevsʹkoho,en,literal,Konotop
+uri,http://www.wikidata.org/entity/Q12133582,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.642584999 50.334695708),uk,literal,Нетішинський міський краєзнавчий музей,en,literal,Shepetivka Raion
+uri,http://www.wikidata.org/entity/Q12102905,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.846813581 48.885006139),uk,literal,Дунаєвецький районний історико-краєзнавчий музей,en,literal,Kamianets-Podilskyi Raion
+uri,http://www.wikidata.org/entity/Q12171945,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.003530604 49.87742817),uk,literal,Шишацький краєзнавчий музей,en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q12084298,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.033032936 48.803504788),uk,literal,Борщівський обласний краєзнавчий музей,en,literal,Borshchiv
+uri,http://www.wikidata.org/entity/Q12108735,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.071210745 49.440923855),uk,literal,Карлівський історико-краєзнавчий музей,en,literal,Poltava Raion
+uri,http://www.wikidata.org/entity/Q12149656,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.247777777 50.615277777),en,literal,Rivnensʹkyĭ oblasnyĭ krai͡eznavchyĭ muzeĭ,en,literal,Rivne
+uri,http://www.wikidata.org/entity/Q12149656,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.247777777 50.615277777),en,literal,Rivnensʹkyĭ oblasnyĭ krai͡eznavchyĭ muzeĭ,en,literal,Rivne Oblast
+uri,http://www.wikidata.org/entity/Q12133582,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.642584999 50.334695708),uk,literal,Нетішинський міський краєзнавчий музей,en,literal,Netishyn
+uri,http://www.wikidata.org/entity/Q12102905,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.846813581 48.885006139),uk,literal,Дунаєвецький районний історико-краєзнавчий музей,en,literal,Dunaivtsi
+uri,http://www.wikidata.org/entity/Q12083094,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.3851401 50.7415544),en,literal,Bobrovytsia Local Historical Museum,en,literal,Bobrovytsia
+uri,http://www.wikidata.org/entity/Q12164536,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.21805556 48.74361111),en,literal,Uman Local Museum,en,literal,Uman
+uri,http://www.wikidata.org/entity/Q12118560,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.98861111 50.01611111),uk,literal,Лубенський краєзнавчий музей імені Гната Стеллецького,en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q12167353,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.978166666 49.426777777),en,literal,Khmelʹnyt︠s︡ʹkyĭ oblasnyĭ krai︠e︡znavchyĭ muzeĭ,en,literal,Khmelnytskyi
+uri,http://www.wikidata.org/entity/Q12133582,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.642584999 50.334695708),uk,literal,Нетішинський міський краєзнавчий музей,en,literal,Khmelnytskyi Oblast
+uri,http://www.wikidata.org/entity/Q12102905,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.846813581 48.885006139),uk,literal,Дунаєвецький районний історико-краєзнавчий музей,en,literal,Khmelnytskyi Oblast
+uri,http://www.wikidata.org/entity/Q12123475,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.943906439 50.025560732),en,literal,Myrhorodsʹkyĭ krai͡eznavchyĭ muzeĭ,en,literal,Myrhorod Raion
+uri,http://www.wikidata.org/entity/Q12162505,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.957765 50.4746526),en,literal,Trostyanets Regional Museum of Local Lore,en,literal,Trostianets
+uri,http://www.wikidata.org/entity/Q12118560,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.98861111 50.01611111),uk,literal,Лубенський краєзнавчий музей імені Гната Стеллецького,en,literal,Lubny
+uri,http://www.wikidata.org/entity/Q12108735,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.071210745 49.440923855),uk,literal,Карлівський історико-краєзнавчий музей,en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q12108735,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.071210745 49.440923855),uk,literal,Карлівський історико-краєзнавчий музей,en,literal,Karlivka
+uri,http://www.wikidata.org/entity/Q12074136,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.829292394 50.11369812),uk,literal,Ізяславський районний історико-краєзнавчий музей,en,literal,Iziaslav
+uri,http://www.wikidata.org/entity/Q12123475,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.943906439 50.025560732),en,literal,Myrhorodsʹkyĭ krai͡eznavchyĭ muzeĭ,en,literal,Velyki Sorochyntsi
+uri,http://www.wikidata.org/entity/Q12123475,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.943906439 50.025560732),en,literal,Myrhorodsʹkyĭ krai͡eznavchyĭ muzeĭ,en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q12158226,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.847278 49.258778),uk,literal,Стрийський краєзнавчий музей «Верховина»,en,literal,Stryi
+uri,http://www.wikidata.org/entity/Q4306258,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.38003333 45.03046667),en,literal,Museum of Hang-gliding,en,literal,Feodosiia
+uri,http://www.wikidata.org/entity/Q12140604,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.5136 50.2416),uk,literal,Пирятинський районний народний краєзнавчий музей,en,literal,Pyriatyn
+uri,http://www.wikidata.org/entity/Q12153094,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.89572539 46.111577735),uk,literal,Скадовський районний історико-краєзнавчий музей,uk,literal,Скадовська міська громада
+uri,http://www.wikidata.org/entity/Q12084936,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.786061126 50.513435016),uk,literal,Броварський краєзнавчий музей,en,literal,Brovary
+uri,http://www.wikidata.org/entity/Q12105396,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(22.3067 48.6217),en,literal,Transcarpathian Local History Museum named after Tivadar Lehoczky,en,literal,Uzhhorod
+uri,http://www.wikidata.org/entity/Q84571237,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.466944 49.233333),uk,literal,Музей моделей транспорту,en,literal,Vinnytsia
+uri,http://www.wikidata.org/entity/Q538095,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.67758333 50.253),en,literal,Sergei Pavlovich Korolyov Museum of Cosmonautics,en,literal,Zhytomyr
+uri,http://www.wikidata.org/entity/Q12168437,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.48242 50.4218),en,literal,Central State Audiovisual and Electronic Archive of Ukraine,,,
+uri,http://www.wikidata.org/entity/Q65200771,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.330833 49.128056),uk,literal,Краснопавлівський народний краєзнавчий музей,en,literal,Krasnopavlivka
+uri,http://www.wikidata.org/entity/Q2621094,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.12056 44.94278),en,literal,Scythian Neapolis,en,literal,Simferopol
+uri,http://www.wikidata.org/entity/Q4482814,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.3829 45.0314),en,literal,Feodosia local museum,en,literal,Feodosiia
+uri,http://www.wikidata.org/entity/Q61115647,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.865540867 49.365746225),en,literal,Slobozhanske museum of local history,en,literal,Slobozhanske
+uri,http://www.wikidata.org/entity/Q111974612,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.610401641 49.408640774),uk,literal,Рогатинський історико-краєзнавчий музей «Опілля»,en,literal,Rohatyn
+uri,http://www.wikidata.org/entity/Q4155883,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02933 49.84255),en,literal,State Museum of Natural History,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q1982073,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.50493889 50.39384722),en,literal,Museum of Soviet Occupation,en,literal,Mykhaila Stelmakha Street
+uri,http://www.wikidata.org/entity/Q20092833,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.52111111 44.61472222),uk,literal,Севастопольський дельфінарій,en,literal,Sevastopol
+uri,http://www.wikidata.org/entity/Q4173048,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.37016667 45.18700833),en,literal,Eupatoria local museum,en,literal,Yevpatoriia
+uri,http://www.wikidata.org/entity/Q2093814,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.4658823 50.4507565),en,literal,Kyiv Metro Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q15268553,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.27042222 49.98975556),en,literal,Museum of Famous Kharkiv Citizens,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q16700961,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.201666666 44.911944444),en,literal,Kara-Dag dolphinarium,en,literal,Kurortne
+uri,http://www.wikidata.org/entity/Q51755541,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.614773373 46.634556348),en,literal,Kherson Nature Museum,en,literal,Kherson
+uri,http://www.wikidata.org/entity/Q130085865,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.925583 47.17125),uk,literal,Великолепетиський районний народний краєзнавчий музей ім. О. І. Ціпко,en,literal,Velyka Lepetykha
+uri,http://www.wikidata.org/entity/Q28704414,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.996837 50.3685127),uk,literal,Гадяцький історико-краєзнавчий музей,en,literal,Hadiach
+uri,http://www.wikidata.org/entity/Q124758163,,,,uk,literal,Великобурлуцький краєзнавчий музей,en,literal,Velykyi Burluk
+uri,http://www.wikidata.org/entity/Q65205801,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.622222222 49.841388888),en,literal,Valky museum of local history,en,literal,Valky
+uri,http://www.wikidata.org/entity/Q1055311,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.143611111 44.467777777),en,literal,Livadia Palace,en,literal,Livadiya
+uri,http://www.wikidata.org/entity/Q111918387,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.276944444 49.253055555),uk,literal,Білицький народний музей історії та художньо-ужиткового мистецтва,en,literal,Bilyky
+uri,http://www.wikidata.org/entity/Q1974519,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.731667 46.4675),en,literal,Odesa Zoo,en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q4306356,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.487055555 50.439944444),en,literal,Kyiv railway transport museum,en,literal,Solomianka Raion
+uri,http://www.wikidata.org/entity/Q4306356,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.48672778 50.44023611),en,literal,Kyiv railway transport museum,en,literal,Solomianka Raion
+uri,http://www.wikidata.org/entity/Q4496329,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.24 49.9991),en,literal,Kharkiv Maritime Museum,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q28704414,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.996837 50.3685127),uk,literal,Гадяцький історико-краєзнавчий музей,uk,literal,Гадяцька міська громада
+uri,http://www.wikidata.org/entity/Q59291087,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.835086 49.451833),en,literal,Balakliya Regional Museum of Local Lore,en,literal,Balakliia
+uri,http://www.wikidata.org/entity/Q111974612,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.610401641 49.408640774),uk,literal,Рогатинський історико-краєзнавчий музей «Опілля»,en,literal,Ivano-Frankivsk Oblast
+uri,http://www.wikidata.org/entity/Q118610830,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.771019 51.949432),uk,literal,Ямпільський краєзнавчий музей,en,literal,Yampil
+uri,http://www.wikidata.org/entity/Q3330552,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.8045 48.0251),en,literal,Donetsk Region Museum of local history,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q2467688,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.521141 50.441696),en,literal,PinchukArtCentre,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4281584,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.5575 47.09277778),en,literal,Mariupol Museum of Local Lore,en,literal,Mariupol Raion
+uri,http://www.wikidata.org/entity/Q4164364,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.683333333 47.766666666),en,literal,Dokuchaievsk Zoo,en,literal,Dokuchaievsk
+uri,http://www.wikidata.org/entity/Q61114923,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.522072179 50.168885718),en,literal,Bohodukhiv museum of local history,en,literal,Bohodukhiv
+uri,http://www.wikidata.org/entity/Q30972564,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.697546083 48.535203014),uk,literal,Костянтинівський міський краєзнавичй музей,en,literal,Kostiantynivka
+uri,http://www.wikidata.org/entity/Q110888208,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.3541 49.6445),en,literal,PARK3020,en,literal,Strilky
+uri,http://www.wikidata.org/entity/Q3019652,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.318055555 50.739444444),en,literal,Pharmacy Museum in Lutsk,en,literal,Lutsk
+uri,http://www.wikidata.org/entity/Q47093439,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.442886948 47.40022698),en,literal,Bashtan Museum of Local History,en,literal,Bashtanka
+uri,http://www.wikidata.org/entity/Q110795115,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.9571 48.2553),en,literal,Air and Space Museum in Chernivtsi,en,literal,Chernivtsi
+uri,http://www.wikidata.org/entity/Q25433234,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.830833333 48.155555555),en,literal,Hutsul museum in Verkhovyna,en,literal,Verkhovyna
+uri,http://www.wikidata.org/entity/Q116756614,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(22.9875 48.547222222),uk,literal,Свалявський історичний музей,en,literal,Svaliava
+uri,http://www.wikidata.org/entity/Q61114923,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.522072179 50.168885718),en,literal,Bohodukhiv museum of local history,en,literal,Kharkiv Oblast
+uri,http://www.wikidata.org/entity/Q1427503,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.51305556 50.44833333),en,literal,Golden Gate,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q3868374,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.56144444 49.5835),en,literal,Poltava Local History Museum,en,literal,Poltava
+uri,http://www.wikidata.org/entity/Q88875279,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.8329 45.33282),en,literal,Danube Flotilla Monument,en,literal,Nezalezhnosti Avenue
+uri,http://www.wikidata.org/entity/Q16689921,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.275925169 49.195639178),en,literal,Izium museum of local history,en,literal,Izium
+uri,http://www.wikidata.org/entity/Q31891070,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.297695279 50.737276778),uk,literal,Зоопарк ХІІ Місяців,,,
+uri,http://www.wikidata.org/entity/Q20082494,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.207841853 49.992263914),en,literal,Railway museum in Kharkiv,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q3330552,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.8045 48.0251),en,literal,Donetsk Region Museum of local history,en,literal,Donetsk Oblast
+uri,http://www.wikidata.org/entity/Q4081696,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.35333333 46.19388889),en,literal,Local museum in Bilhorod-Dnistrovskyi,en,literal,Bilhorod-Dnistrovskyi
+uri,http://www.wikidata.org/entity/Q25432073,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.758055555 49.433888888),en,literal,Medenychi Zoo Limpopo,en,literal,Drohobych Raion
+uri,http://www.wikidata.org/entity/Q4496313,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.225 50.002777777),en,literal,Kharkiv Zoo,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q110966452,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.663055555 48.568888888),uk,literal,Екопарк «Долина Вовків»,en,literal,Zakarpattia Oblast
+uri,http://www.wikidata.org/entity/Q1989108,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.032345 49.842671),en,literal,Pharmacy Museum,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q2338568,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(29.2164033 50.4774861),en,literal,Radomysl Castle,en,literal,Radomyshl
+uri,http://www.wikidata.org/entity/Q15120993,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.54485 44.594369444),en,literal,Sevastopol Zoo,,,
+uri,http://www.wikidata.org/entity/Q2073209,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.513512 50.444758),en,literal,Pedagogical Museum,en,literal,"Volodymyrska Street, Kyiv"
+uri,http://www.wikidata.org/entity/Q743881,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.882104 44.749009),en,literal,Bakhchisaray Palace,en,literal,Bakhchysarai
+uri,http://www.wikidata.org/entity/Q12122625,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.20361 51.522329),en,literal,Mena Zoo,en,literal,Chernihiv Oblast
+uri,http://www.wikidata.org/entity/Q11786996,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.9984 49.8335),en,literal,Museum of the History of Lviv Railway,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q4470516,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.801317 48.007573),en,literal,Ukrainian steppe park in Donetsk,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q4496331,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.236553513 50.008246821),en,literal,Kharkiv museum of nature,en,literal,Kharkiv Raion
+uri,http://www.wikidata.org/entity/Q16666883,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.443967211 49.374720978),uk,literal,Красноградський краєзнавчий музей імені П. Д. Мартиновича,en,literal,Berestyn
+uri,http://www.wikidata.org/entity/Q195975,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.508633 50.396937),en,literal,National Oleksandr Dovzhenko Film Centre,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q1232436,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.5233 44.5955),en,literal,Siege of Sevastopol,en,literal,Sevastopol
+uri,http://www.wikidata.org/entity/Q4331460,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.75833 46.458568),en,literal,Museum of the Cinema,en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q109264771,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.277166666 49.253111111),uk,literal,Білицький краєзнавчий музей,en,literal,Bilyky
+uri,http://www.wikidata.org/entity/Q65200776,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.611111 49.714167),en,literal,Kupiansk museum of local history,en,literal,Kupiansk
+uri,http://www.wikidata.org/entity/Q16701571,,,,en,literal,Dolphinarium in Kyiv,,,
+uri,http://www.wikidata.org/entity/Q4331441,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.765345 46.477063),en,literal,Dolphinarium in Odesa,en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q913880,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.459444444 50.407222222),en,literal,Ukraine State Aviation Museum,uk,literal,Медова вулиця (Київ)
+uri,http://www.wikidata.org/entity/Q86000700,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.147425108 49.705075865),uk,literal,Чутівський районний краєзнавчий музей,en,literal,Chutove
+uri,http://www.wikidata.org/entity/Q2338568,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(29.2164033 50.4774861),en,literal,Radomysl Castle,en,literal,Zhytomyr Oblast
+uri,http://www.wikidata.org/entity/Q47133683,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.730178828 46.48019393),en,literal,Jewish History Museum,en,literal,Prymorskyi Raion
+uri,http://www.wikidata.org/entity/Q4186919,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.18324 47.81356),en,literal,Zaporizhzhia regional museum,en,literal,Zaporizhzhia
+uri,http://www.wikidata.org/entity/Q4275693,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.963888888 48.045),en,literal,Makeevka Art and Local History Museum,en,literal,Makiivka
+uri,http://www.wikidata.org/entity/Q65205838,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.223056 49.401111),uk,literal,Первомайський краєзнавчий музей,en,literal,Zlatopil
+uri,http://www.wikidata.org/entity/Q103888912,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.134722222 44.936666666),en,literal,TNU Zoological Museum,en,literal,Simferopol
+uri,http://www.wikidata.org/entity/Q2642379,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5175 50.46222222),en,literal,One Street Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q110966452,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.663055555 48.568888888),uk,literal,Екопарк «Долина Вовків»,en,literal,Synevyrska Poliana
+uri,http://www.wikidata.org/entity/Q1958231,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.8 48.016),en,literal,Forged figures park in Donetsk,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q25437723,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.985917931 50.038900694),uk,literal,Лубенський музей К. М. Скаржинської,en,literal,Lubenskiy Uyezd
+uri,http://www.wikidata.org/entity/Q4496331,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.236553513 50.008246821),en,literal,Kharkiv museum of nature,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q65205831,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.926944 49.944722),uk,literal,Люботинський міський краєзнавчий музей,en,literal,Liubotyn
+uri,http://www.wikidata.org/entity/Q2459274,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.464734 50.45553),en,literal,Kyiv Zoo,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12118980,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.339169444 50.741111111),en,literal,Lutsk Zoo,en,literal,Lutsk
+uri,http://www.wikidata.org/entity/Q2628708,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.05552 44.419776),en,literal,Vorontsov Palace,en,literal,Alupka
+uri,http://www.wikidata.org/entity/Q65200784,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.316389 48.885),uk,literal,Лозівський краєзнавчий музей,en,literal,Lozova
+uri,http://www.wikidata.org/entity/Q2502803,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5146645 50.4607518),en,literal,Mikhail Bulgakov Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q2664327,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.517514 50.466361),en,literal,Ukrainian National Chornobyl Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q1139126,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.557013 50.434322),en,literal,National Museum of Ukrainian Decorative Folk Art,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q16665652,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.756740154 46.453434622),en,literal,Odesa University Zoological museum,en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q1857990,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.51223056 50.35453889),en,literal,National Museum of Folk Architecture and Folkways of Ukraine,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q2093830,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5585 50.43548),en,literal,Museum of the Book and Printing of Ukraine,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q56367083,,,,uk,literal,Шепетівський окружний краєзнавчий музей у Славуті,en,literal,Slavuta
+uri,http://www.wikidata.org/entity/Q2024073,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(22.30595833 48.62086111),en,literal,Museum of Folk Architecture and Life,en,literal,Uzhhorod
+uri,http://www.wikidata.org/entity/Q112623448,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.321111111 47.934722222),en,literal,KRAUSS Aviation Museum,en,literal,Kryvyi Rih
+uri,http://www.wikidata.org/entity/Q12149655,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.33277778 50.60944444),en,literal,Rivne Zoo,en,literal,Rivne Oblast
+uri,http://www.wikidata.org/entity/Q743881,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.881944444 44.748611111),en,literal,Bakhchisaray Palace,en,literal,Bakhchysarai
+uri,http://www.wikidata.org/entity/Q4111612,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.47666667 49.27138889),en,literal,Podilskyi Zoo,en,literal,Vinnytsia
+uri,http://www.wikidata.org/entity/Q97189372,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.545423 47.09461),en,literal,Club IT 8-bit,en,literal,Mariupol
+uri,http://www.wikidata.org/entity/Q4084159,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.79458333 46.75444444),en,literal,Berdiansk Museum of Local Lore,en,literal,Berdiansk
+uri,http://www.wikidata.org/entity/Q16702056,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.259444444 44.965),en,literal,Dolphinarium in Koktebel,en,literal,Koktebel
+uri,http://www.wikidata.org/entity/Q25444302,,,,uk,literal,Дельфінарій «Акварель»,en,literal,Alushta
+uri,http://www.wikidata.org/entity/Q25439085,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.811477 46.168673),en,literal,Henichesk Regional History Museum,en,literal,Henichesk
+uri,http://www.wikidata.org/entity/Q2339243,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(29.216396 50.477624),en,literal,Museum of Ukrainian home icons,en,literal,Radomyshl
+uri,http://www.wikidata.org/entity/Q3088188,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.709166666 48.923611111),en,literal,Ivano-Frankivsk Regional Art Museum,en,literal,Ivano-Frankivsk
+uri,http://www.wikidata.org/entity/Q25431916,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.511074347 50.441956917),en,literal,Zoological Museum of Taras Shevchenko National University of Kyiv,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q65200746,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.239304799 49.200118317),en,literal,Zachepylivka museum of local history,en,literal,Zachepylivka
+uri,http://www.wikidata.org/entity/Q111736393,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.519396773 51.522433433),uk,literal,Сосницький краєзнавчий музей ім. Ю. С. Виноградського,en,literal,Sosnytsia
+uri,http://www.wikidata.org/entity/Q4497357,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.61 46.62917),en,literal,Kherson Museum of Local Lore,en,literal,Kherson
+uri,http://www.wikidata.org/entity/Q12166962,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.2281 50.0007),en,literal,Kharkiv Dolphinarium,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q4537469,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.118333333 44.494444444),en,literal,Yalta Zoo,en,literal,Yalta
+uri,http://www.wikidata.org/entity/Q21384934,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.7428655 46.4853032),en,literal,Maritime Museum,en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q4281584,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.5575 47.09277778),en,literal,Mariupol Museum of Local Lore,en,literal,Mariupol
+uri,http://www.wikidata.org/entity/Q111894861,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.354785399 49.68079622),en,literal,Museum of Local Lore in Zmiiv,en,literal,Zmiiv
+uri,http://www.wikidata.org/entity/Q4166225,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.78805 47.99261),en,literal,Dolphinarium in Donetsk,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q133698469,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.558373 50.1958085),en,literal,Museum of 19th century living in Velyka Krucha,en,literal,Velyka Krucha
+uri,http://www.wikidata.org/entity/Q2339097,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.53158333 50.45263889),en,literal,Kyiv Water Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q619438,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.780416537 48.200748363),en,literal,Muravskyi museum,en,literal,Dmytrashkivka
+uri,http://www.wikidata.org/entity/Q97163939,,,,en,literal,Museum of Local History in Pogrebyshche,en,literal,Vinnytsia Oblast
+uri,http://www.wikidata.org/entity/Q4320477,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.036111111 46.961111111),en,literal,Nikolaev Zoo,en,literal,Mykolaiv
+uri,http://www.wikidata.org/entity/Q4440427,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(27.22 49.7553),uk,literal,Старокостянтинівський районний історико-краєзнавчий музей,en,literal,Starokostiantyniv
+uri,http://www.wikidata.org/entity/Q1139126,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.557013 50.434322),en,literal,National Museum of Ukrainian Decorative Folk Art,en,literal,Lavrska Street
+uri,http://www.wikidata.org/entity/Q16689333,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.353399681 45.17948421),uk,literal,Євпаторійський дельфінарій,en,literal,Yevpatoriia
+uri,http://www.wikidata.org/entity/Q65200328,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.680833333 49.846666666),en,literal,Dvorichna museum of local history,en,literal,Dvorichna
+uri,http://www.wikidata.org/entity/Q4070452,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.0001 48.596),en,literal,Bakhmut State Museum of Local Lore,en,literal,Bakhmut
+uri,http://www.wikidata.org/entity/Q20073885,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.51466776 50.44555237),uk,literal,Ботанічний музей імені Д. М. Доброчаєвої,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q97163939,,,,en,literal,Museum of Local History in Pogrebyshche,en,literal,Pohrebyshche
+uri,http://www.wikidata.org/entity/Q4306327,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.74444 48.04389),en,literal,Railway museum in Donetsk,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q476462,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.596521 44.500927),en,literal,Naval museum complex Balaklava,en,literal,Balaklava
+uri,http://www.wikidata.org/entity/Q65200435,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.935833 49.864722),en,literal,The building of the former Novo-Belgorod convict Central Prison,en,literal,Pechenihy
+uri,http://www.wikidata.org/entity/Q4281584,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.5575 47.09277778),en,literal,Mariupol Museum of Local Lore,en,literal,Donetsk Oblast
+uri,http://www.wikidata.org/entity/Q3398590,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.53798333 50.44093611),en,literal,State Museum of Toys,en,literal,Pecherskyi District
+uri,http://www.wikidata.org/entity/Q4306348,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.033972222 49.843138888),en,literal,Lviv Museum of the History of Religion,en,literal,Lviv Raion
+uri,http://www.wikidata.org/entity/Q4306120,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.158697048 47.06652743),en,literal,Museum of Georgy Sedov in Siedove,en,literal,Siedove
+uri,http://www.wikidata.org/entity/Q4306106,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.5 49.35),en,literal,Bruno Schulz Museum,en,literal,Drohobych
+uri,http://www.wikidata.org/entity/Q4306191,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.18918 48.05003),en,literal,Museum of Sergei Prokofiev in Sontsivka village,en,literal,Donetsk Oblast
+uri,http://www.wikidata.org/entity/Q4306087,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.737480501 46.482502351),en,literal,"Museum ""Old Odesa""",en,literal,Odesa Raion
+uri,http://www.wikidata.org/entity/Q4306087,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.737480501 46.482502351),en,literal,"Museum ""Old Odesa""",en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q4306411,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.7309 51.3738),uk,literal,Музей партизанської слави «Спадщанський ліс»,en,literal,Konotop Raion
+uri,http://www.wikidata.org/entity/Q4331440,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.751861 46.464278),en,literal,Odesa Military Historical Museum,en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q4331444,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.744566 46.484914),en,literal,State Literature Museum,en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q4306528,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.406944444 44.558055555),en,literal,35th Coast Battery,en,literal,Sevastopol
+uri,http://www.wikidata.org/entity/Q4306191,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.18918 48.05003),en,literal,Museum of Sergei Prokofiev in Sontsivka village,en,literal,Sontsivka
+uri,http://www.wikidata.org/entity/Q4306057,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.99138889 49.42972222),uk,literal,Музей-панорама «Визволення Проскурова»,en,literal,Khmelnytskyi
+uri,http://www.wikidata.org/entity/Q4306078,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.0402 48.4682),en,literal,Literary museum in Dnipro,en,literal,Dnipro Raion
+uri,http://www.wikidata.org/entity/Q4320542,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.986 46.9732),en,literal,V. V. Vereshchagin Mykolaiv Art Museum,en,literal,Mykolaiv
+uri,http://www.wikidata.org/entity/Q4306087,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.737480501 46.482502351),en,literal,"Museum ""Old Odesa""",en,literal,Odesa Oblast
+uri,http://www.wikidata.org/entity/Q4306411,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.7309 51.3738),uk,literal,Музей партизанської слави «Спадщанський ліс»,en,literal,Sumy Oblast
+uri,http://www.wikidata.org/entity/Q4306154,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.52555556 50.45916667),en,literal,Museum of the Magdeburg Law,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4306379,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.02288889 48.45518333),en,literal,Coins Museum of Ukraine,en,literal,Dnipro
+uri,http://www.wikidata.org/entity/Q4306078,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.0402 48.4682),en,literal,Literary museum in Dnipro,en,literal,Dnipro
+uri,http://www.wikidata.org/entity/Q4306462,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.242611111 50.01075),en,literal,Museum of World Sexual Cultures,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q4306459,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.8022 48.0005),en,literal,Museum of Communication,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q4306324,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.694166666 47.175277777),en,literal,Museum of Greek Priazovya,en,literal,Sartana
+uri,http://www.wikidata.org/entity/Q4306078,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.0402 48.4682),en,literal,Literary museum in Dnipro,en,literal,Dnipropetrovsk Oblast
+uri,http://www.wikidata.org/entity/Q4306135,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.04486667 48.460975),en,literal,Museum of the History of Dnipropetrovsk Oblast Financial System Development,en,literal,Dnipro
+uri,http://www.wikidata.org/entity/Q4306384,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.550139 47.09389),en,literal,Museum of Folk Life (Mariupol),en,literal,Mariupol
+uri,http://www.wikidata.org/entity/Q4306287,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02759 49.83807),en,literal,Museum of Ancient Ukrainian Book Art LAG,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q4306324,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.694166666 47.175277777),en,literal,Museum of Greek Priazovya,en,literal,Donetsk Oblast
+uri,http://www.wikidata.org/entity/Q4306061,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.408375 49.216030555),en,literal,Pirogov's Estate Museum in Vinnytsya,en,literal,Vinnytsia
+uri,http://www.wikidata.org/entity/Q4314838,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.382774 45.032333),en,literal,Feodosia National Gallery I. K. Aivazovsky,en,literal,Feodosiia
+uri,http://www.wikidata.org/entity/Q4306157,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.38508056 45.02484167),en,literal,Marina and Anastasia Tsvetaeva Museum,en,literal,Feodosiia
+uri,http://www.wikidata.org/entity/Q4306287,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02759 49.83807),en,literal,Museum of Ancient Ukrainian Book Art LAG,en,literal,Lviv Oblast
+uri,http://www.wikidata.org/entity/Q4306475,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.9861 46.9781),en,literal,The Museum of Shipbuilding and Fleet,en,literal,"Admiralska Street, Mykolaiv"
+uri,http://www.wikidata.org/entity/Q4306459,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.8022 48.0005),en,literal,Museum of Communication,en,literal,Voroshylovskyi District (Donetsk)
+uri,http://www.wikidata.org/entity/Q4306348,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.033972222 49.843138888),en,literal,Lviv Museum of the History of Religion,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q4306423,,,,uk,literal,Музей подарунків Київської міської адміністрації,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4306337,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.0292 48.4671),en,literal,Museum of Dnipropetrovsk Oblast Local Governance,en,literal,Dnipro
+uri,http://www.wikidata.org/entity/Q4306351,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.536722 50.436209),en,literal,Toilet History Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4306243,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.331201568 50.74815271),en,literal,Museum of the Volhynian Icon,en,literal,Lutsk
+uri,http://www.wikidata.org/entity/Q4306034,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.517015 50.462886),en,literal,Kiev Archive Museum of Transitional Period,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4306324,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.694166666 47.175277777),en,literal,Museum of Greek Priazovya,en,literal,Mariupol Raion
+uri,http://www.wikidata.org/entity/Q4306387,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.4788 50.059),en,literal,Museum of folk architecture and way of life of Middle Naddnipryanschina,en,literal,Kyiv Oblast
+uri,http://www.wikidata.org/entity/Q4306073,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.0615 49.4464),en,literal,"Muzej ""Kobzarya"" T. G. Shevchenka",en,literal,Cherkasy Raion
+uri,http://www.wikidata.org/entity/Q4306348,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.033972222 49.843138888),en,literal,Lviv Museum of the History of Religion,en,literal,Lviv Oblast
+uri,http://www.wikidata.org/entity/Q4306314,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.024639507 48.298304137),uk,literal,Музей історії міста Горлівка,en,literal,Horlivka
+uri,http://www.wikidata.org/entity/Q4306491,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.7909 48.0097),en,literal,Museum of Photojournalism and Photographic Equipment,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q4306492,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.80944444 48.02083333),en,literal,Museum of FC Shakhtar Donetsk,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q4306469,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.753888888 46.471388888),en,literal,Museum of Odesa Modern Art,en,literal,Odesa
+uri,http://www.wikidata.org/entity/Q4306518,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02714 49.84105),en,literal,Museum of Ethnography and Crafts in Lviv,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q4306198,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.5122 49.7317),en,literal,Taras Shevchenko museum,en,literal,Kaniv
+uri,http://www.wikidata.org/entity/Q4306287,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02759 49.83807),en,literal,Museum of Ancient Ukrainian Book Art LAG,en,literal,Lviv Raion
+uri,http://www.wikidata.org/entity/Q4306073,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.0615 49.4464),en,literal,"Muzej ""Kobzarya"" T. G. Shevchenka",en,literal,Cherkasy
+uri,http://www.wikidata.org/entity/Q4306073,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.0615 49.4464),en,literal,"Muzej ""Kobzarya"" T. G. Shevchenka",en,literal,Cherkasy Oblast
+uri,http://www.wikidata.org/entity/Q3398590,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.53798333 50.44093611),en,literal,State Museum of Toys,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4320491,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.006714 46.971995),en,literal,Mykolaiv Regional Museum of Local History,en,literal,Mykolaiv
+uri,http://www.wikidata.org/entity/Q4306386,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.29083333 48.83444444),en,literal,Museum of folk architecture in Prelesne,en,literal,Prelesne
+uri,http://www.wikidata.org/entity/Q4306165,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.81321488 47.821993707),en,literal,House-Museum of Vladimir Nemirovich-Danchenko,en,literal,Neskuchne
+uri,http://www.wikidata.org/entity/Q4306295,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5483 50.4395),uk,literal,Музей історії Київміськбуду,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4306191,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.18918 48.05003),en,literal,Museum of Sergei Prokofiev in Sontsivka village,en,literal,Pokrovsk Raion
+uri,http://www.wikidata.org/entity/Q4079985,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.881789 44.748807),en,literal,Bakhchisaray State Historical-Cultural Museum-Reserve,en,literal,Bakhchysarai
+uri,http://www.wikidata.org/entity/Q4163237,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.04748056 48.46083333),en,literal,Dnipropetrovsk Folk Museum of Police History,en,literal,Dnipro
+uri,http://www.wikidata.org/entity/Q12100443,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.072456095 49.081683592),en,literal,Oles Honchar Museum,en,literal,Poltava Raion
+uri,http://www.wikidata.org/entity/Q4271090,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02351 49.83665),uk,literal,Музей Русалки Дністрової,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q4231188,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.1603847 51.2382191),en,literal,Konotop Aviation Museum,en,literal,Konotop Raion
+uri,http://www.wikidata.org/entity/Q4425567,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.759722222 48.019166666),en,literal,Museum of Military Glory in Snizhne,en,literal,Snizhne
+uri,http://www.wikidata.org/entity/Q12119970,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.54776944 49.57026667),en,literal,Panas Myrny Museum,en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q12119965,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.56045 49.57914167),en,literal,"Literature museum of Ivan Kotliarevskyi, Poltava",en,literal,Poltava Raion
+uri,http://www.wikidata.org/entity/Q4425567,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.759722222 48.019166666),en,literal,Museum of Military Glory in Snizhne,en,literal,Donetsk Oblast
+uri,http://www.wikidata.org/entity/Q12119965,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.56045 49.57914167),en,literal,"Literature museum of Ivan Kotliarevskyi, Poltava",en,literal,Poltava
+uri,http://www.wikidata.org/entity/Q3398682,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.45313889 50.49794444),uk,literal,Народний музей хліба,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4446061,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.799944444 50.905980555),en,literal,Nikanor Onatsky Regional Art Museum in Sumy,en,literal,Sumy Oblast
+uri,http://www.wikidata.org/entity/Q12130517,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.699958569 48.486224267),uk,literal,Музей Марійки Підгірянки,en,literal,Bili Oslavi
+uri,http://www.wikidata.org/entity/Q4290218,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.0686 48.460477777),en,literal,House-Museum of Dmytro Yavornytskyi,en,literal,Dnipro
+uri,http://www.wikidata.org/entity/Q3399799,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.517 50.4598),en,literal,Ivan Kavaleridze Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12119969,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(27.63080353 50.591345266),en,literal,Lesya Ukrainka's birthplace,en,literal,Zviahel
+uri,http://www.wikidata.org/entity/Q4513543,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.287426 51.487147),en,literal,Mykhailo Kotsiubynsky manor house in Chernihiv,en,literal,Chernihiv
+uri,http://www.wikidata.org/entity/Q12141923,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.56022222 49.57958333),en,literal,"Aviation and Space museum, Poltava",en,literal,Poltava Raion
+uri,http://www.wikidata.org/entity/Q4231188,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.1603847 51.2382191),en,literal,Konotop Aviation Museum,en,literal,Konotop
+uri,http://www.wikidata.org/entity/Q12141923,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.56022222 49.57958333),en,literal,"Aviation and Space museum, Poltava",en,literal,Poltava
+uri,http://www.wikidata.org/entity/Q3400166,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.55776 50.43572),en,literal,Museum of Historical Treasures of Ukraine,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4165230,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.829235 50.934335),en,literal,Anton Chekhov museum in Sumy,en,literal,Sumy
+uri,http://www.wikidata.org/entity/Q4068269,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.8049 47.987),en,literal,Pharmacy Lache,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q97454601,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.434444444 49.538333333),en,literal,Stepan Rudanskyi Literary Museum,en,literal,Vinnytsia Oblast
+uri,http://www.wikidata.org/entity/Q4393636,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.27458333 44.53986111),en,literal,Pushkin Museum in Gurzuf,en,literal,Hurzuf
+uri,http://www.wikidata.org/entity/Q2084457,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.51611111 50.45833333),en,literal,National Historical Museum of Ukraine,en,literal,Kyiv Oblast
+uri,http://www.wikidata.org/entity/Q4165232,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.864 44.4115),en,literal,Memorial Home of Yulian Semyonov,en,literal,Olyva
+uri,http://www.wikidata.org/entity/Q4163247,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.055184 48.457107),en,literal,Dnipro Art Museum,en,literal,Dnipro
+uri,http://www.wikidata.org/entity/Q4496327,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.232461524 49.992172449),en,literal,Kharkov State Academic Puppet Theater,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q12110818,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.205229708 49.15045975),uk,literal,Кобеляцький музей літератури і мистецтва,en,literal,Kobeliaky
+uri,http://www.wikidata.org/entity/Q12119962,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5133887 50.4439094),en,literal,Pavlo Tychyna Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12100443,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.072456095 49.081683592),en,literal,Oles Honchar Museum,en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q4231188,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.1603847 51.2382191),en,literal,Konotop Aviation Museum,en,literal,Sumy Oblast
+uri,http://www.wikidata.org/entity/Q12130480,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.002370354 48.864010396),uk,literal,Музей-кімната Марійки Підгірянки,en,literal,Tlumach
+uri,http://www.wikidata.org/entity/Q4166251,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.8023 48.0084),en,literal,Donetsk Regional Museum of Art,en,literal,Donetsk
+uri,http://www.wikidata.org/entity/Q3400438,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.51444 50.39583),en,literal,Maxym Rylsky Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12100443,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.072456095 49.081683592),en,literal,Oles Honchar Museum,en,literal,Sukhe
+uri,http://www.wikidata.org/entity/Q4271056,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.031326111 49.841835388),en,literal,Lviv Town Hall,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q97454601,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.434444444 49.538333333),en,literal,Stepan Rudanskyi Literary Museum,en,literal,Kalynivka Raion
+uri,http://www.wikidata.org/entity/Q12119965,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.56045 49.57914167),en,literal,"Literature museum of Ivan Kotliarevskyi, Poltava",en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q4467697,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.0191569 49.8344429),en,literal,Prison on Łącki Street,en,literal,Franko Raion
+uri,http://www.wikidata.org/entity/Q12121205,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.7128863 49.3555968),en,literal,Manuilivka Maxim Gorky Literary and Memorial Museum,en,literal,Verkhnia Manuilivka
+uri,http://www.wikidata.org/entity/Q97454601,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.434444444 49.538333333),en,literal,Stepan Rudanskyi Literary Museum,en,literal,Khomutyntsi
+uri,http://www.wikidata.org/entity/Q4063085,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.411177 44.671032),en,literal,Alushta Aquarium,en,literal,Alushta
+uri,http://www.wikidata.org/entity/Q4096764,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.1472 50.0829),en,literal,Brody Museum of History and District Ethnography,en,literal,Brody
+uri,http://www.wikidata.org/entity/Q4055845,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(39.382296 48.526723),en,literal,Aviation Technical Museum (Luhansk),en,literal,Luhansk
+uri,http://www.wikidata.org/entity/Q12141923,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.56022222 49.57958333),en,literal,"Aviation and Space museum, Poltava",en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q12119969,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(27.63080353 50.591345266),en,literal,Lesya Ukrainka's birthplace,en,literal,Zhytomyr Oblast
+uri,http://www.wikidata.org/entity/Q3399006,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.514421698 50.445543343),en,literal,Archeological museum of NASU,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q20081826,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.61666667 46.635),en,literal,Kherson Literature Museum,en,literal,Kherson
+uri,http://www.wikidata.org/entity/Q4165184,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.082694 45.025633),en,literal,Alexander Grin house museum,en,literal,Staryi Krym
+uri,http://www.wikidata.org/entity/Q4163267,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(39.73472222 48.295),en,literal,"Museum ""Young Guard""",en,literal,Luhansk Oblast
+uri,http://www.wikidata.org/entity/Q12119974,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.915395704 50.129797475),en,literal,Museum of Ulas Samchuk,en,literal,Tyliavka
+uri,http://www.wikidata.org/entity/Q4527028,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.58321 44.552963),en,literal,"Building of Diorama Storm of Sapun Mountain on May 7, 1944 in Sevastopol",en,literal,Balaklava Raion
+uri,http://www.wikidata.org/entity/Q3398569,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.6319 50.4298),en,literal,Sewer Museum,en,literal,Darnytskyi District
+uri,http://www.wikidata.org/entity/Q4425567,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.759722222 48.019166666),en,literal,Museum of Military Glory in Snizhne,en,literal,Horlivka Raion
+uri,http://www.wikidata.org/entity/Q119959464,,,,en,literal,National Museum of Natural History,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4199698,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.284228 51.477804),en,literal,Elijah Church,en,literal,Chernihiv
+uri,http://www.wikidata.org/entity/Q84596567,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.026636997 49.844865502),en,literal,Lviv Toy Museum,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q12123472,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.61151 49.9656),en,literal,Davyd Guramishvili Literary Memorial Museum,en,literal,Myrhorod Raion
+uri,http://www.wikidata.org/entity/Q12119146,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.031568558 49.822369249),en,literal,"152 Franka Street, Lviv",en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q122728123,,,,en,literal,National Memorial Museum of Hryhoriy Skovoroda,en,literal,Skovorodynivka
+uri,http://www.wikidata.org/entity/Q4114421,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.525695 44.613304),en,literal,Museum of Russian Black sea Navy in Sevastopol,en,literal,Sevastopol
+uri,http://www.wikidata.org/entity/Q4141311,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.575 48.675),en,literal,Kamyanets Podilsky Castle,en,literal,Khmelnytskyi Oblast
+uri,http://www.wikidata.org/entity/Q4370824,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.50247778 49.61785278),en,literal,Poltava Museum of Long-Range and Strategic Aviation,en,literal,Poltava
+uri,http://www.wikidata.org/entity/Q3398622,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.6314 50.4467),uk,literal,Музей історії КП «Київпастранс»,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4242985,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.102625 44.94448056),en,literal,Crimean Tatar Museum of cultural and historical heritage,en,literal,Simferopol
+uri,http://www.wikidata.org/entity/Q56372189,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.013068612 49.100116195),uk,literal,"Кімната-музей Богдана Лепкого в селі Крогулець Гусятинського району, Тернопільської області",en,literal,Krohulets
+uri,http://www.wikidata.org/entity/Q12088477,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.943717225 50.028044687),en,literal,Mykola Gogol Literary and Memorial Museum in Velykosorochyn,en,literal,Velyki Sorochyntsi
+uri,http://www.wikidata.org/entity/Q12123472,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.61151 49.9656),en,literal,Davyd Guramishvili Literary Memorial Museum,en,literal,Myrhorod
+uri,http://www.wikidata.org/entity/Q4263839,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.7193 48.9207),uk,literal,Літературний музей Прикарпаття,en,literal,Ivano-Frankivsk
+uri,http://www.wikidata.org/entity/Q12093802,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.990655 50.370833),en,literal,Gadyatsky Literary Museum,en,literal,Hadiach
+uri,http://www.wikidata.org/entity/Q4135567,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.9578524 44.8415535),en,literal,Genoese Fortress,en,literal,Sudak
+uri,http://www.wikidata.org/entity/Q3398413,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.52013889 50.44133333),en,literal,Sholom Aleichem Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4242985,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.102625 44.94448056),en,literal,Crimean Tatar Museum of cultural and historical heritage,en,literal,Republic of Crimea
+uri,http://www.wikidata.org/entity/Q12086651,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.27809 49.25359),uk,literal,Білицький літературно-меморіальний музей Мате Залки,en,literal,Bilyky
+uri,http://www.wikidata.org/entity/Q4504314,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.095134 44.948778),en,literal,Central Museum of Tavrida,en,literal,Simferopol
+uri,http://www.wikidata.org/entity/Q12123472,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.61151 49.9656),en,literal,Davyd Guramishvili Literary Memorial Museum,en,literal,Poltava Oblast
+uri,http://www.wikidata.org/entity/Q3399790,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.483 50.358),en,literal,Bee-Farming Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4155895,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.89375 51.33452778),en,literal,Palace of Rozumovskyi (Baturyn),en,literal,Baturyn
+uri,http://www.wikidata.org/entity/Q4219714,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.47114167 45.34814444),en,literal,Kerch Archeology museum,en,literal,Kerch
+uri,http://www.wikidata.org/entity/Q3398686,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.520041 50.397279),en,literal,Yakubovsky Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q3398672,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.51763889 50.44513889),en,literal,Kyiv History Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q51755554,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.509753207 50.436193197),en,literal,Software and Computer Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4281595,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.55083 47.09333),en,literal,Kuindzhi Art Museum,en,literal,Mariupol
+uri,http://www.wikidata.org/entity/Q3399806,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5190221 50.4581578),en,literal,"Museum ""Cultural wealth of Ukraine""",en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q3406883,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.554 50.4382),en,literal,Memorial in Commemoration of Famines' Victims in Ukraine,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12141922,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.55819 49.57763),en,literal,Literaturno-memorialʹnyĭ muzeĭ V.H. Korolenka v Poltavi,en,literal,Poltava
+uri,http://www.wikidata.org/entity/Q4242963,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.09548889 44.94886667),en,literal,Crimean ethnographic museum,en,literal,Simferopol
+uri,http://www.wikidata.org/entity/Q3398899,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.514166666 50.464027777),en,literal,Pharmacy Museum in Kyiv,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4096918,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.40694444 44.55805556),en,literal,Maxim Gorky Fortresses,en,literal,Sevastopol
+uri,http://www.wikidata.org/entity/Q4165198,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.103224 44.948298),en,literal,Ilya Selvinsky House Museum,en,literal,Simferopol
+uri,http://www.wikidata.org/entity/Q4114422,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.500725 49.251044444),en,literal,Ukrainian Air Force Museum in Vinnytsya,en,literal,Vinnytsia
+uri,http://www.wikidata.org/entity/Q4124454,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.33555603 50.75),en,literal,Volynskiy regional museum of Ukrainian army,en,literal,Lutsk
+uri,http://www.wikidata.org/entity/Q4144464,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.0087 48.3042),uk,literal,Горлівський державний міський музей мініатюрної книги,en,literal,Horlivka
+uri,http://www.wikidata.org/entity/Q12119964,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.896666666 48.175277777),en,literal,Literaturno-memorialʹnyĭ muzeĭ Ivana Franka u Kryvorivni,en,literal,Krivorivnia
+uri,http://www.wikidata.org/entity/Q3399851,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.500753 50.440004),en,literal,Lesya Ukrainka Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4522268,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.06638908 49.84483337),en,literal,Shevchenkivskyi Hai,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q4242963,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.09548889 44.94886667),en,literal,Crimean ethnographic museum,en,literal,Republic of Crimea
+uri,http://www.wikidata.org/entity/Q50808889,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.3132 51.14778),uk,literal,Музей поета Олександра Олеся,en,literal,Bilopillia
+uri,http://www.wikidata.org/entity/Q50808889,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.3132 51.14778),uk,literal,Музей поета Олександра Олеся,en,literal,Bilopillia urban hromada
+uri,http://www.wikidata.org/entity/Q51755554,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.509753207 50.436193197),en,literal,Software and Computer Museum,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q4288751,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.474 50.614833333),en,literal,Mezhyhirya,en,literal,Vyshhorod Raion
+uri,http://www.wikidata.org/entity/Q4144469,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(38.0208389 48.2987167),en,literal,Horlivka Art Museum,en,literal,Horlivka
+uri,http://www.wikidata.org/entity/Q12119954,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(39.299125 48.578475),en,literal,Vladimir Dal's Literary Museum,en,literal,Luhansk
+uri,http://www.wikidata.org/entity/Q4198590,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.8345 45.343972222),en,literal,Prydunavya Museum in Izmail,en,literal,Izmail
+uri,http://www.wikidata.org/entity/Q4263813,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.380929 45.032054),en,literal,House Museum of A.S. Grin,en,literal,Feodosiia
+uri,http://www.wikidata.org/entity/Q3398488,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.516028 50.466806),en,literal,Alex Art House,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q108598748,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.565887427 49.545852773),uk,literal,Кімната-музей Володимира Гнатюка Тернопільського національного педагогічного університету імені Володимира Гнатюка,en,literal,Ternopil
+uri,http://www.wikidata.org/entity/Q51755554,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.24963735 50.006120313),en,literal,Software and Computer Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12154649,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.499348296 51.521552348),en,literal,Memorial Museum of Oleksandr Dovzhenko,en,literal,Koriukivka Raion
+uri,http://www.wikidata.org/entity/Q25422291,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.136111111 49.895),uk,literal,Меморіальний будинок-музей Гната Хоткевича,en,literal,Vysokyi
+uri,http://www.wikidata.org/entity/Q12119961,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(29.637392199 49.991722265),uk,literal,Літературно-меморіальний музей-садиба М. Т. Рильського (Романівка),en,literal,Romanivka
+uri,http://www.wikidata.org/entity/Q3399758,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5866 50.4665),en,literal,Museum of useless things,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4165207,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.25205556 44.96011111),en,literal,House-Museum of Maximilian Voloshin,en,literal,Koktebel
+uri,http://www.wikidata.org/entity/Q4198590,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.8345 45.343972222),en,literal,Prydunavya Museum in Izmail,en,literal,Odesa Oblast
+uri,http://www.wikidata.org/entity/Q4204461,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.139055555 49.816777777),uk,literal,Історико-краєзнавчий музей міста Винники,en,literal,Vynnyky
+uri,http://www.wikidata.org/entity/Q12167352,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(26.983938888 49.423316666),en,literal,Khmelnytskyi literary museum,en,literal,Khmelnytskyi
+uri,http://www.wikidata.org/entity/Q3398437,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.55775 50.43219444),en,literal,Ivan Honchar Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4289528,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.38138889 46.84527778),en,literal,Melitopol Museum,en,literal,Melitopol
+uri,http://www.wikidata.org/entity/Q4242963,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.09548889 44.94886667),en,literal,Crimean ethnographic museum,en,literal,Autonomous Republic of Crimea
+uri,http://www.wikidata.org/entity/Q12170607,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.93746521 50.268367877),en,literal,Memorial manor of Hryhoriy Skovoroda,en,literal,Chornukhy
+uri,http://www.wikidata.org/entity/Q4151971,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.25694 47.66944),en,literal,Huliaipole regional museum,en,literal,Huliaipole
+uri,http://www.wikidata.org/entity/Q3400429,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5008 50.4398),en,literal,Museum of Outstanding Figures of Ukrainian Culture,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4112988,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.318625441 50.847997979),en,literal,Volodymyr-Volynskyi Historical Museum,en,literal,Volodymyr
+uri,http://www.wikidata.org/entity/Q12119970,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.54776944 49.57026667),en,literal,Panas Myrny Museum,en,literal,Poltava Raion
+uri,http://www.wikidata.org/entity/Q12119970,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.54776944 49.57026667),en,literal,Panas Myrny Museum,en,literal,Poltava
+uri,http://www.wikidata.org/entity/Q12154649,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.499348296 51.521552348),en,literal,Memorial Museum of Oleksandr Dovzhenko,en,literal,Chernihiv Oblast
+uri,http://www.wikidata.org/entity/Q12154649,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.499348296 51.521552348),en,literal,Memorial Museum of Oleksandr Dovzhenko,en,literal,Sosnytsia
+uri,http://www.wikidata.org/entity/Q51755554,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.24963735 50.006120313),en,literal,Software and Computer Museum,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q4446061,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.799944444 50.905980555),en,literal,Nikanor Onatsky Regional Art Museum in Sumy,en,literal,Sumy Raion
+uri,http://www.wikidata.org/entity/Q4446061,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.799944444 50.905980555),en,literal,Nikanor Onatsky Regional Art Museum in Sumy,en,literal,Sumy
+uri,http://www.wikidata.org/entity/Q3398677,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.51489444 50.44544722),en,literal,National Museum of Natural History at the National Academy of Sciences of Ukraine,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12119968,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.435833333 48.598333333),en,literal,"Museum of Les Martovych, Torhovytsia",en,literal,Torhovytsia
+uri,http://www.wikidata.org/entity/Q4163238,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.06388889 48.45583333),en,literal,Dmytro Yavornytsky National Historical Museum of Dnipro,en,literal,Dnipro
+uri,http://www.wikidata.org/entity/Q136652108,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.809702777 50.783380555),uk,literal,Тростянецький приватний краєзнавчий музей,en,literal,Parafiivska selyshchna hromada
+uri,http://www.wikidata.org/entity/Q16162161,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.334069543 50.366711474),en,literal,Baryshiv Museum of Taras Shevchenko,en,literal,Baryshivska Hromada
+uri,http://www.wikidata.org/entity/Q20081829,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(27.42333333 49.16194444),uk,literal,Літературно-меморіальний музей Анни Ахматової,en,literal,Slobidka-Shelekhivska
+uri,http://www.wikidata.org/entity/Q2084457,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.51611111 50.45833333),en,literal,National Historical Museum of Ukraine,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q4496323,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.245686 50.00114),en,literal,Kharkiv Lit Museum,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q12119969,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(27.63080353 50.591345266),en,literal,Lesya Ukrainka's birthplace,en,literal,Zviahel Raion
+uri,http://www.wikidata.org/entity/Q12130618,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.93169 48.292174),en,literal,Museum of Jewish History and Culture in Bukovina,en,literal,Chernivtsi
+uri,http://www.wikidata.org/entity/Q12130608,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.615747343 48.519281053),uk,literal,Музей історії міста Кам'янського,en,literal,Kamyanske
+uri,http://www.wikidata.org/entity/Q12132920,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5157816 50.4433012),en,literal,National Museum Тaras Shevchenko,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12135045,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.627330263 50.110817254),uk,literal,Обухівський районний історико-краєзнавчий музей,en,literal,Obukhiv
+uri,http://www.wikidata.org/entity/Q12135045,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.627330263 50.110817254),uk,literal,Обухівський районний історико-краєзнавчий музей,en,literal,Obukhiv Raion
+uri,http://www.wikidata.org/entity/Q12130599,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.568768744 48.633701569),uk,literal,Музей історії Надвірнянщини,en,literal,Nadvirna
+uri,http://www.wikidata.org/entity/Q12132467,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.706276 48.921158),uk,literal,Народний музей освіти Прикарпаття,en,literal,Ivano-Frankivsk
+uri,http://www.wikidata.org/entity/Q12130599,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.568768744 48.633701569),uk,literal,Музей історії Надвірнянщини,en,literal,Ivano-Frankivsk Oblast
+uri,http://www.wikidata.org/entity/Q12130616,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.26915 50.83214),en,literal,Museum of History of Agriculture in Wolhynia,en,literal,Volyn Oblast
+uri,http://www.wikidata.org/entity/Q12137045,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.546694444 46.612),en,literal,Ochakiv Military History Museum,en,literal,Mykolaiv Oblast
+uri,http://www.wikidata.org/entity/Q12132467,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.706276 48.921158),uk,literal,Народний музей освіти Прикарпаття,en,literal,Ivano-Frankivsk Oblast
+uri,http://www.wikidata.org/entity/Q12137022,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.892816378 50.304648359),uk,literal,Охтирський міський краєзнавчий музей,en,literal,Okhtyrka
+uri,http://www.wikidata.org/entity/Q12137022,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.892816378 50.304648359),uk,literal,Охтирський міський краєзнавчий музей,en,literal,Okhtyrka Raion
+uri,http://www.wikidata.org/entity/Q12130617,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(39.300714 48.576316),en,literal,Museum of History and Culture of Luhansk,en,literal,Luhansk Raion
+uri,http://www.wikidata.org/entity/Q12134880,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.169831216 48.700331144),uk,literal,Обертинський історико-краєзнавчий музей,en,literal,Obertyn
+uri,http://www.wikidata.org/entity/Q12134093,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.355942497 46.758839693),uk,literal,Новокаховська картинна галерея імені А. С. Гавдзинського,en,literal,Kakhovka Raion
+uri,http://www.wikidata.org/entity/Q12130602,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(35.071388888 47.860277777),en,literal,Zaporozhian Cossacks History Museum,en,literal,Zaporizhzhia
+uri,http://www.wikidata.org/entity/Q12136205,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(29.530534363 49.187664029),en,literal,Museum of Local History in Orativ,en,literal,Vinnytsia Raion
+uri,http://www.wikidata.org/entity/Q12130605,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.56388889 47.13055556),en,literal,Museum of the History of the Ilyich Plant,en,literal,Mariupol
+uri,http://www.wikidata.org/entity/Q12130605,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.595602 47.139951),en,literal,Museum of the History of the Ilyich Plant,en,literal,Mariupol
+uri,http://www.wikidata.org/entity/Q12134093,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.355942497 46.758839693),uk,literal,Новокаховська картинна галерея імені А. С. Гавдзинського,en,literal,Kherson Oblast
+uri,http://www.wikidata.org/entity/Q12130616,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.26915 50.83214),en,literal,Museum of History of Agriculture in Wolhynia,en,literal,Rokyni
+uri,http://www.wikidata.org/entity/Q12135045,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.627330263 50.110817254),uk,literal,Обухівський районний історико-краєзнавчий музей,en,literal,Kyiv Oblast
+uri,http://www.wikidata.org/entity/Q12132463,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.276682727 48.518606957),uk,literal,Народний меморіальний музей Юлія Мейтуса,en,literal,Kropyvnytskyi Raion
+uri,http://www.wikidata.org/entity/Q12130604,,,,uk,literal,Музей історії м. Козятина,,,
+uri,http://www.wikidata.org/entity/Q12132964,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.905970594 46.688756105),uk,literal,Національний історико-археологічний заповідник «Ольвія»,en,literal,Ochakiv Raion
+uri,http://www.wikidata.org/entity/Q12130696,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02012222 49.8368),uk,literal,Музично-меморіальний музей Соломії Крушельницької,en,literal,Lviv
+uri,http://www.wikidata.org/entity/Q12134880,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.169831216 48.700331144),uk,literal,Обертинський історико-краєзнавчий музей,en,literal,Ivano-Frankivsk Oblast
+uri,http://www.wikidata.org/entity/Q12137022,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(34.892816378 50.304648359),uk,literal,Охтирський міський краєзнавчий музей,en,literal,Sumy Oblast
+uri,http://www.wikidata.org/entity/Q12130605,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.56388889 47.13055556),en,literal,Museum of the History of the Ilyich Plant,en,literal,Donetsk Oblast
+uri,http://www.wikidata.org/entity/Q12130605,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.595602 47.139951),en,literal,Museum of the History of the Ilyich Plant,en,literal,Donetsk Oblast
+uri,http://www.wikidata.org/entity/Q12134093,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.355942497 46.758839693),uk,literal,Новокаховська картинна галерея імені А. С. Гавдзинського,en,literal,Nova Kakhovka
+uri,http://www.wikidata.org/entity/Q12130645,,,,uk,literal,"Музеї Києва, в яких зберігається державна частина Музейного фонду України",en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12130610,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.846076984 48.902215767),uk,literal,Музей історії міста Тисмениці імені Степана Гаврилюка,en,literal,Tysmenytsia
+uri,http://www.wikidata.org/entity/Q12135633,,,,uk,literal,Олександрівський районний краєзнавчий музей,en,literal,Oleksandriia Raion
+uri,http://www.wikidata.org/entity/Q12132463,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.276682727 48.518606957),uk,literal,Народний меморіальний музей Юлія Мейтуса,en,literal,Kropyvnytskyi
+uri,http://www.wikidata.org/entity/Q12136803,,,,uk,literal,Острозький краєзнавчий музей,en,literal,Ostroh
+uri,http://www.wikidata.org/entity/Q12136205,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(29.530534363 49.187664029),en,literal,Museum of Local History in Orativ,en,literal,Vinnytsia Oblast
+uri,http://www.wikidata.org/entity/Q12136205,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(29.530534363 49.187664029),en,literal,Museum of Local History in Orativ,en,literal,Orativ
+uri,http://www.wikidata.org/entity/Q12132466,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.910222 48.110205),en,literal,"Folk museum of Hutsul Theater, Krasnoillia",en,literal,Krasnoyillia
+uri,http://www.wikidata.org/entity/Q12132911,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.730055606 49.123153992),en,literal,"National Reserve ""Ancient Halych""",en,literal,Halych
+uri,http://www.wikidata.org/entity/Q12132911,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.730055606 49.123153992),en,literal,"National Reserve ""Ancient Halych""",en,literal,Ivano-Frankivsk Oblast
+uri,http://www.wikidata.org/entity/Q12132467,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.706276 48.921158),uk,literal,Народний музей освіти Прикарпаття,en,literal,Ivano-Frankivsk Raion
+uri,http://www.wikidata.org/entity/Q12132463,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(32.276682727 48.518606957),uk,literal,Народний меморіальний музей Юлія Мейтуса,en,literal,Kirovohrad Oblast
+uri,http://www.wikidata.org/entity/Q12130593,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.5078765 50.4515675),en,literal,The Ukrainian Sixtiers Dissident Movement Museum,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12130696,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02012222 49.8368),uk,literal,Музично-меморіальний музей Соломії Крушельницької,en,literal,Lviv Oblast
+uri,http://www.wikidata.org/entity/Q12130655,,,,uk,literal,Музеї Сімферополя,en,literal,Simferopol
+uri,http://www.wikidata.org/entity/Q12135633,,,,uk,literal,Олександрівський районний краєзнавчий музей,en,literal,Oleksandrivka
+uri,http://www.wikidata.org/entity/Q12130655,,,,uk,literal,Музеї Сімферополя,en,literal,Simferopol Raion
+uri,http://www.wikidata.org/entity/Q12132913,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.490257966 44.612370488),en,literal,Херсонес Таврійський,en,literal,Sevastopol
+uri,http://www.wikidata.org/entity/Q12134128,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.65083333 48.79083333),uk,literal,Новомиргородський районний краєзнавчий музей,en,literal,Novoukrainka Raion
+uri,http://www.wikidata.org/entity/Q12130619,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.108995351 50.912622895),en,literal,Chernihiv Region Weaving History Museum,en,literal,Kozelets
+uri,http://www.wikidata.org/entity/Q12130642,,,,uk,literal,Музеї Великої Феодосії,en,literal,Feodosiia
+uri,http://www.wikidata.org/entity/Q12130606,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.780033152 46.757094911),uk,literal,Музей історії міста Бердянська,en,literal,Berdiansk Raion
+uri,http://www.wikidata.org/entity/Q12135633,,,,uk,literal,Олександрівський районний краєзнавчий музей,en,literal,Kirovohrad Oblast
+uri,http://www.wikidata.org/entity/Q12130597,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.26583333 49.41527778),en,literal,Battle of the Korsun–Cherkassy Pocket Museum,en,literal,Cherkasy Raion
+uri,http://www.wikidata.org/entity/Q12136741,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.883882832 50.948252128),en,literal,Oster museum of local history,en,literal,Oster
+uri,http://www.wikidata.org/entity/Q12130642,,,,uk,literal,Музеї Великої Феодосії,en,literal,Feodosiya City Council
+uri,http://www.wikidata.org/entity/Q12136741,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.883882832 50.948252128),en,literal,Oster museum of local history,en,literal,Chernihiv Raion
+uri,http://www.wikidata.org/entity/Q12134577,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.883857 51.04673),en,literal,Ivan Spaskyi Local History Museum in Nizhyn,en,literal,Nizhyn
+uri,http://www.wikidata.org/entity/Q12130606,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.780033152 46.757094911),uk,literal,Музей історії міста Бердянська,en,literal,Berdiansk
+uri,http://www.wikidata.org/entity/Q12130605,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.56388889 47.13055556),en,literal,Museum of the History of the Ilyich Plant,en,literal,Mariupol Raion
+uri,http://www.wikidata.org/entity/Q12130605,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.595602 47.139951),en,literal,Museum of the History of the Ilyich Plant,en,literal,Mariupol Raion
+uri,http://www.wikidata.org/entity/Q12130606,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.780033152 46.757094911),uk,literal,Музей історії міста Бердянська,en,literal,Zaporizhzhia Oblast
+uri,http://www.wikidata.org/entity/Q12134880,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.169831216 48.700331144),uk,literal,Обертинський історико-краєзнавчий музей,en,literal,Ivano-Frankivsk Raion
+uri,http://www.wikidata.org/entity/Q12130631,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.406680646 49.025480979),en,literal,Ivan Franko memorial museum in Kalush,en,literal,Kalush
+uri,http://www.wikidata.org/entity/Q12133204,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.878259 50.835013),uk,literal,Недригайлівський краєзнавчий музей,en,literal,Romny Raion
+uri,http://www.wikidata.org/entity/Q12130615,,,,uk,literal,Музей історії склозаводу та села Кутище,en,literal,Kutishche
+uri,http://www.wikidata.org/entity/Q12134128,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.65083333 48.79083333),uk,literal,Новомиргородський районний краєзнавчий музей,en,literal,Kirovohrad Oblast
+uri,http://www.wikidata.org/entity/Q12130597,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.26583333 49.41527778),en,literal,Battle of the Korsun–Cherkassy Pocket Museum,en,literal,Cherkasy Oblast
+uri,http://www.wikidata.org/entity/Q12132911,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.730055606 49.123153992),en,literal,"National Reserve ""Ancient Halych""",en,literal,Ivano-Frankivsk Raion
+uri,http://www.wikidata.org/entity/Q12136741,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.883882832 50.948252128),en,literal,Oster museum of local history,en,literal,Chernihiv Oblast
+uri,http://www.wikidata.org/entity/Q12130642,,,,uk,literal,Музеї Великої Феодосії,en,literal,Autonomous Republic of Crimea
+uri,http://www.wikidata.org/entity/Q12130655,,,,uk,literal,Музеї Сімферополя,en,literal,Autonomous Republic of Crimea
+uri,http://www.wikidata.org/entity/Q12130597,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.26583333 49.41527778),en,literal,Battle of the Korsun–Cherkassy Pocket Museum,en,literal,Korsun-Shevchenkivskyi
+uri,http://www.wikidata.org/entity/Q12135641,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.116700882 48.668424241),uk,literal,Олександрійський краєзнавчий музей імені Худякової Антоніни Федорівни,en,literal,Oleksandriia Raion
+uri,http://www.wikidata.org/entity/Q12130696,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.02012222 49.8368),uk,literal,Музично-меморіальний музей Соломії Крушельницької,en,literal,Lviv Raion
+uri,http://www.wikidata.org/entity/Q12130609,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.55555556 48.72083333),en,literal,History Museum of Kramatorsk,en,literal,Kramatorsk
+uri,http://www.wikidata.org/entity/Q12133204,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.878259 50.835013),uk,literal,Недригайлівський краєзнавчий музей,en,literal,Sumy Oblast
+uri,http://www.wikidata.org/entity/Q12130598,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(30.521832671 50.455654315),en,literal,Museum of History of St. Michael's Golden-Domed Monastery in Kyiv,en,literal,Kyiv
+uri,http://www.wikidata.org/entity/Q12130600,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.096826493 46.915271886),uk,literal,Музей історії Урзуфа,en,literal,Donetsk Oblast
+uri,http://www.wikidata.org/entity/Q12130600,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.096826493 46.915271886),uk,literal,Музей історії Урзуфа,en,literal,Urzuf
+uri,http://www.wikidata.org/entity/Q12133204,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.878259 50.835013),uk,literal,Недригайлівський краєзнавчий музей,en,literal,Nedryhailiv
+uri,http://www.wikidata.org/entity/Q12135642,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.116756 48.668371),en,literal,Oleksandriysʹkyy Krayeznavchyy Muzey Imeni Khudyakovoyi Antoniny Fedorivny,en,literal,Oleksandriia
+uri,http://www.wikidata.org/entity/Q12130620,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.969239612 48.468905034),uk,literal,Музей історії українського хореографічного мистецтва,en,literal,Kropyvnytskyi Raion
+uri,http://www.wikidata.org/entity/Q12135641,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.116700882 48.668424241),uk,literal,Олександрійський краєзнавчий музей імені Худякової Антоніни Федорівни,en,literal,Oleksandriia
+uri,http://www.wikidata.org/entity/Q12130607,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.855641797 49.069190657),uk,literal,Музей історії міста Болехова імені Романа Скворія,en,literal,Kalush Raion
+uri,http://www.wikidata.org/entity/Q12135641,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(33.116700882 48.668424241),uk,literal,Олександрійський краєзнавчий музей імені Худякової Антоніни Федорівни,en,literal,Kirovohrad Oblast
+uri,http://www.wikidata.org/entity/Q12130617,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(39.300714 48.576316),en,literal,Museum of History and Culture of Luhansk,en,literal,Luhansk
+uri,http://www.wikidata.org/entity/Q12130617,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(39.300714 48.576316),en,literal,Museum of History and Culture of Luhansk,en,literal,Luhansk Oblast
+uri,http://www.wikidata.org/entity/Q12134128,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.65083333 48.79083333),uk,literal,Новомиргородський районний краєзнавчий музей,en,literal,Novomyrhorod
+uri,http://www.wikidata.org/entity/Q12130620,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.969239612 48.468905034),uk,literal,Музей історії українського хореографічного мистецтва,en,literal,Mykolayivka
+uri,http://www.wikidata.org/entity/Q12130607,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.855641797 49.069190657),uk,literal,Музей історії міста Болехова імені Романа Скворія,en,literal,Bolekhiv
+uri,http://www.wikidata.org/entity/Q12130620,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(31.969239612 48.468905034),uk,literal,Музей історії українського хореографічного мистецтва,en,literal,Kirovohrad Oblast
+uri,http://www.wikidata.org/entity/Q12130599,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(24.568768744 48.633701569),uk,literal,Музей історії Надвірнянщини,en,literal,Nadvirna Raion
+uri,http://www.wikidata.org/entity/Q12130607,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(23.855641797 49.069190657),uk,literal,Музей історії міста Болехова імені Романа Скворія,en,literal,Ivano-Frankivsk Oblast
+uri,http://www.wikidata.org/entity/Q12130616,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.26915 50.83214),en,literal,Museum of History of Agriculture in Wolhynia,en,literal,Lutsk Raion
+uri,http://www.wikidata.org/entity/Q12130600,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(37.096826493 46.915271886),uk,literal,Музей історії Урзуфа,en,literal,Mariupol Raion
+uri,http://www.wikidata.org/entity/Q12132925,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(25.03763889 48.52883333),en,literal,National Museum of Hutsulshchyna and Pokuttya Folk Art,en,literal,Kolomyia
+uri,http://www.wikidata.org/entity/Q12130603,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(36.288337716 49.977653823),en,literal,Museum of Women's and Gender History,en,literal,Kharkiv
+uri,http://www.wikidata.org/entity/Q12157211,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(39.33333333 48.58333333),uk,literal,Станично-Луганський краєзнавчий музей,en,literal,Stanytsia-Luhanska Raion
+uri,http://www.wikidata.org/entity/Q12146454,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.879321317 48.212949031),en,literal,Pishchanka museum,en,literal,Pishchanka
+uri,http://www.wikidata.org/entity/Q12162818,http://www.opengis.net/ont/geosparql#wktLiteral,literal,Point(28.860352009 48.6727012),uk,literal,Тульчинський краєзнавчий музей,en,literal,Tulchyn
