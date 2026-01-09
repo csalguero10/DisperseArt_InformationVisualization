@@ -1710,3 +1710,87 @@ footer img {max-width: 156px;}
     .fix-background-webkit{ background-attachment: scroll !important;}
     .no-transition-ipad *{ transition-timing-function: none; -moz-transition-timing-function: none; -webkit-transition-timing-function: none; -o-transition-timing-function: none; transition-duration: 0s; -moz-transition-duration: 0s; -webkit-transition-duration: 0s; -o-transition-duration: 0s; }
 }
+
+
+/* SERVICE – riduco l'altezza e regolo gli spazi */
+#service .architecture-title {
+    min-height: 150px; /* prova 350–450 finché ti piace */
+}
+
+#service .service-text-row {
+    margin-top: 20px;   /* distanza tra /Service e le colonne */
+    margin-bottom: 60px;
+}
+
+#service .service-text-col {
+    padding: 40px 20px; /* margini interni più comodi */
+}
+
+/* DATASETS – altezza titolo e spazi */
+#datasets .architecture-title {
+    min-height: 150px;  /* come hai scelto tu per il service */
+}
+
+/* spazio tra / Datasets e la PRIMA riga di card */
+#datasets .dataset-row {
+    margin-top: 50px;    /* puoi portarlo a 30 o 50 se vuoi più/meno respiro */
+    margin-bottom: 0;
+}
+
+/* spazio tra PRIMA e SECONDA riga di card (più stretto) */
+#datasets .dataset-row-second {
+    margin-top: 25px;    /* qui giochi per avvicinare/allontanare le due file */
+}
+
+/* padding interno più compatto nelle card, se vuoi */
+#datasets .dataset-item {
+    margin-bottom: 0;
+}
+
+/* se le card ti sembrano ancora “troppo alte” puoi ridurre questi margini globali del tema, ma solo dentro datasets */
+#datasets .dataset-item .margin-twenty-five {
+    margin: 20px 0 15px 0;   /* immagine–titolo più vicini */
+}
+
+#datasets .dataset-item .margin-twenty {
+    margin: 15px 0 0 0;      /* meno spazio sopra/sotto la riga rossa */
+}
+
+
+/* PROJECTS – nascondo il numero 03 nel blocco rosso */
+#projects .architecture-title-number {
+    display: none;
+}
+
+/* più spazio tra sezione datasets e sezione projects */
+#datasets {
+    padding-bottom: 80px;  /* riaggiunge aria sotto, anche se hai no-padding */
+}
+
+#projects {
+    padding-top: 80px;     /* stacco dall'alto dentro la sezione projects */
+}
+
+/* spaziatura interna della parte testo+visualizzazione */
+#projects .projects-content {
+    margin-top: 40px;      /* distanza tra il titolo / Research questions e il contenuto */
+    margin-bottom: 60px;
+}
+
+/* colonne di testo delle research question */
+#projects .projects-text-col {
+    padding: 20px 20px;
+}
+
+/* box per la visualizzazione */
+#projects .projects-viz-row {
+    margin-top: 30px;
+}
+
+#projects .projects-viz-placeholder {
+    border: 1px solid #e5e5e5;
+    padding: 30px;
+    min-height: 200px;
+    text-align: left;
+    background-color: #fafafa;
+}
