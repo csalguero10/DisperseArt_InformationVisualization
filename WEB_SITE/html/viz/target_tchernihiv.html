@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tchernihiv Target Map</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 0;
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    }
+    .viz-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #vis {
+      overflow: visible;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="viz-wrapper">
+    <h1 style="font-size:22px; font-weight:700; color:#2C3E50;">
+      Historic Centre of Tchernihiv: within range of nearby attacks
+    </h1>
+
+    <p style="font-size:14px; color:#444; max-width:700px; margin:auto; margin-bottom:20px;">
+      Concentric rings mark 250 m, 500 m and 1 km around the UNESCO-listed historic centre.
+      Each dot indicates a documented damage event:
+      <span style="color:#C0392B; font-weight:600;">red</span> for very close hits,
+      shifting towards <span style="color:#27AE60; font-weight:600;">green</span> as distance increases.
+      Closest event: 80.1 meters away.
+    </p>
+
+    <div id="vis"></div>
+  </div>
+
+  <script>
+    vegaEmbed('#vis', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "background": "white",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300,
+      "strokeWidth": 0
+    }
+  },
+  "datasets": {
+    "data-38e0c4f86a05b2804d43005c13240626": [
+      {
+        "site_category": "Cultural Heritage",
+        "site_criteria": "(ii), (iv)",
+        "site_description": "The historic centre of Chernihiv preserves architectural monuments from the 9th to 13th centuries, including the Transfiguration Cathedral, Boris and Gleb Cathedral, and the Pyatnytska Church, representing the architectural school of the medieval Kyivan Rus.",
+        "site_inscription": "1989",
+        "site_location": "Chernihiv, Ukraine",
+        "site_name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "url": "https://raw.githubusercontent.com/csalguero10/DisperseArt_InformationVisualization/refs/heads/main/WEB_SITE/html/viz/img/UNESCO_logo.svg.png",
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "data-878e8591685abef9faa30055381d8b16": [
+      {
+        "r": 250,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "r": 500,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "r": 1000,
+        "x": 0,
+        "y": 0
+      }
+    ],
+    "data-f8809cc45b3053b44a3827d15dc3e18e": [
+      {
+        "Distance_m": 226.8,
+        "UNESCO_Damaged_Name": "Historic building of the regional youth center (formerly the Shchors Cinema)",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 0.0,
+        "r_vis": 376.8,
+        "x": 376.8,
+        "y": 0.0
+      },
+      {
+        "Distance_m": 226.8,
+        "UNESCO_Damaged_Name": "Historic building of the regional youth center (formerly the Shchors Cinema)",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 0.36959913571644626,
+        "r_vis": 376.8,
+        "x": 351.3555360395613,
+        "y": 136.1158598193192
+      },
+      {
+        "Distance_m": 638.9,
+        "UNESCO_Damaged_Name": "St. Catherine Church of Chernihiv",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 0.7391982714328925,
+        "r_vis": 788.9,
+        "x": 583.0041347953779,
+        "y": 531.478493272769
+      },
+      {
+        "Distance_m": 638.9,
+        "UNESCO_Damaged_Name": "St. Catherine Church of Chernihiv",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 1.1087974071493387,
+        "r_vis": 788.9,
+        "x": 351.64298887211106,
+        "y": 706.1943205500087
+      },
+      {
+        "Distance_m": 778.2,
+        "UNESCO_Damaged_Name": "Chernihiv Regional Universal Scientific Library. V.G. Korolenko",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 1.478396542865785,
+        "r_vis": 928.2,
+        "x": 85.64349125383694,
+        "y": 924.2404624370511
+      },
+      {
+        "Distance_m": 778.2,
+        "UNESCO_Damaged_Name": "Chernihiv Regional Universal Scientific Library. V.G. Korolenko",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 1.8479956785822313,
+        "r_vis": 928.2,
+        "x": -254.01398738490735,
+        "y": 892.7665619930107
+      },
+      {
+        "Distance_m": 813.1,
+        "UNESCO_Damaged_Name": "St. Kazan Church",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 2.2175948142986774,
+        "r_vis": 963.1,
+        "x": -580.3974182968617,
+        "y": 768.5703915935987
+      },
+      {
+        "Distance_m": 813.1,
+        "UNESCO_Damaged_Name": "St. Kazan Church",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 2.5871939500151235,
+        "r_vis": 963.1,
+        "x": -818.8441234211913,
+        "y": 507.0068160671816
+      },
+      {
+        "Distance_m": 307.2,
+        "UNESCO_Damaged_Name": "Central City Library M. Kotsiubynsky",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 2.95679308573157,
+        "r_vis": 457.2,
+        "x": -449.4153011754799,
+        "y": 84.01027954573597
+      },
+      {
+        "Distance_m": 307.2,
+        "UNESCO_Damaged_Name": "Central City Library M. Kotsiubynsky",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 3.326392221448016,
+        "r_vis": 457.2,
+        "x": -449.4153011754799,
+        "y": -84.01027954573586
+      },
+      {
+        "Distance_m": 785.9,
+        "UNESCO_Damaged_Name": "Chernihiv Regional Art Museum",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 3.6959913571644627,
+        "r_vis": 935.9,
+        "x": -795.7182173293459,
+        "y": -492.68786123691734
+      },
+      {
+        "Distance_m": 847.9,
+        "UNESCO_Damaged_Name": "Memorial house-museum and estate of Mykhailo Kotsiubynskyi \u2013 Chernihiv",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 4.065590492880908,
+        "r_vis": 997.9,
+        "x": -601.3691036428608,
+        "y": -796.3413911029504
+      },
+      {
+        "Distance_m": 847.9,
+        "UNESCO_Damaged_Name": "Memorial house-museum and estate of Mykhailo Kotsiubynskyi \u2013 Chernihiv",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 4.435189628597355,
+        "r_vis": 997.9,
+        "x": -273.0882977929317,
+        "y": -959.805809322156
+      },
+      {
+        "Distance_m": 80.1,
+        "UNESCO_Damaged_Name": "Chernihiv Regional Taras Shevchenko Theater",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 4.804788764313802,
+        "r_vis": 230.1,
+        "x": 21.23094951250589,
+        "y": -229.1184339654874
+      },
+      {
+        "Distance_m": 80.1,
+        "UNESCO_Damaged_Name": "Chernihiv Regional Taras Shevchenko Theater",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 5.174387900030247,
+        "r_vis": 230.1,
+        "x": 102.56439566418132,
+        "y": -205.9770733407999
+      },
+      {
+        "Distance_m": 131.3,
+        "UNESCO_Damaged_Name": "The building of the \u201cDesna\u201d Hotel (architectural monument of local importance)",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 5.543987035746693,
+        "r_vis": 281.3,
+        "x": 207.88320841417126,
+        "y": -189.5105845577767
+      },
+      {
+        "Distance_m": 396.9,
+        "UNESCO_Damaged_Name": "The house in which the writer H. Uspenskyi lived (architectural monument of local importance) \u2013 Chernihiv",
+        "UNESCO_Protected_Name": "Historic Centre of Tchernigov, 9th\u201413th centuries",
+        "angle": 5.91358617146314,
+        "r_vis": 546.9,
+        "x": 509.9690622612422,
+        "y": -197.56306723775398
+      }
+    ]
+  },
+  "height": 700,
+  "layer": [
+    {
+      "data": {
+        "name": "data-878e8591685abef9faa30055381d8b16"
+      },
+      "encoding": {
+        "size": {
+          "field": "r",
+          "legend": null,
+          "scale": {
+            "domain": [
+              0,
+              1000
+            ],
+            "range": [
+              0,
+              100000
+            ]
+          },
+          "type": "quantitative"
+        },
+        "x": {
+          "axis": null,
+          "field": "x",
+          "scale": {
+            "domain": [
+              -1150,
+              1150
+            ]
+          },
+          "type": "quantitative"
+        },
+        "y": {
+          "axis": null,
+          "field": "y",
+          "scale": {
+            "domain": [
+              -1150,
+              1150
+            ]
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "filled": false,
+        "stroke": "lightgray",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "type": "circle"
+      }
+    },
+    {
+      "data": {
+        "name": "data-38e0c4f86a05b2804d43005c13240626"
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "site_name",
+            "title": "UNESCO site",
+            "type": "nominal"
+          },
+          {
+            "field": "site_location",
+            "title": "Location",
+            "type": "nominal"
+          },
+          {
+            "field": "site_category",
+            "title": "Category",
+            "type": "nominal"
+          },
+          {
+            "field": "site_inscription",
+            "title": "Inscription year",
+            "type": "nominal"
+          },
+          {
+            "field": "site_criteria",
+            "title": "Criteria",
+            "type": "nominal"
+          },
+          {
+            "field": "site_description",
+            "title": "Description",
+            "type": "nominal"
+          }
+        ],
+        "url": {
+          "field": "url",
+          "type": "nominal"
+        },
+        "x": {
+          "axis": null,
+          "field": "x",
+          "scale": {
+            "domain": [
+              -1150,
+              1150
+            ]
+          },
+          "type": "quantitative"
+        },
+        "y": {
+          "axis": null,
+          "field": "y",
+          "scale": {
+            "domain": [
+              -1150,
+              1150
+            ]
+          },
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "height": 80,
+        "type": "image",
+        "width": 80
+      }
+    },
+    {
+      "data": {
+        "name": "data-f8809cc45b3053b44a3827d15dc3e18e"
+      },
+      "encoding": {
+        "color": {
+          "field": "Distance_m",
+          "legend": null,
+          "scale": {
+            "domain": [
+              0,
+              847.9
+            ],
+            "range": [
+              "#C0392B",
+              "#F4D03F",
+              "#27AE60"
+            ]
+          },
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "UNESCO_Damaged_Name",
+            "title": "Damaged site",
+            "type": "nominal"
+          },
+          {
+            "field": "Distance_m",
+            "format": ".1f",
+            "title": "Distance (m)",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": null,
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "axis": null,
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "opacity": 0.9,
+        "size": 140,
+        "type": "circle"
+      }
+    }
+  ],
+  "width": 600
+}, {actions: false});
+  </script>
+</body>
+</html>
