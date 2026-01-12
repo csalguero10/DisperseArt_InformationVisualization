@@ -10,9 +10,9 @@ This repository contains the final project developed for the course
 The project investigates patterns of cultural destruction, looting, and long-term cultural appropriation in Ukraine through the integration and visualization of institutional datasets.  
 Using a data-driven approach, the website explores how different forms of cultural harm unfold across time, space, and political contexts.
 
-🔗 Project website: * https://csalguero10.github.io/DisperseArt_InformationVisualization/WEB_SITE/html/architecture.html *
+🔗 Project website: https://csalguero10.github.io/DisperseArt_InformationVisualization/WEB_SITE/html/architecture.html
 
-🔗 Project notebook: *https://colab.research.google.com/drive/1gtZOA8Lxsj58iOOaAueS3Mk1qSnBT414?usp=sharing*
+🔗 Project notebook: https://colab.research.google.com/drive/1gtZOA8Lxsj58iOOaAueS3Mk1qSnBT414?usp=sharing
 
 ---
 
