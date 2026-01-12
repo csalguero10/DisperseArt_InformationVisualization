@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimea vs Volyn Oblast - Interactive Visualization</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            color: #5C3317;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(18px, 4vw, 28px);
+            margin-bottom: 5px;
+            text-align: center;
+            padding: 0 10px;
+        }
+        
+        .subtitle {
+            color: #5C3317;
+            font-family: 'Roboto', sans-serif;
+            font-size: clamp(12px, 2.5vw, 16px);
+            font-style: italic;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 0 10px;
+        }
+        
+        .canvas-container {
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: center;
+            padding: 0 10px;
+        }
+        
+        #canvas {
+            border: 1px solid #E0D5C7;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+        
+        #tooltip {
+            position: fixed;
+            background: rgba(92, 51, 23, 0.95);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            max-width: 250px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        #tooltip.visible {
+            opacity: 1;
+        }
+        
+        .tooltip-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+        
+        .tooltip-info {
+            margin: 3px 0;
+            font-size: 13px;
+        }
+        
+        .legend {
+            margin-top: 20px;
+            text-align: center;
+            color: #5C3317;
+            padding: 0 10px;
+        }
+        
+        .legend-item {
+            display: inline-block;
+            margin: 5px 10px;
+        }
+        
+        .color-box {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            vertical-align: middle;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .subtitle {
+                margin-bottom: 15px;
+            }
+            
+            .legend {
+                margin-top: 15px;
+            }
+            
+            .legend-item {
+                display: block;
+                margin: 8px 0;
+            }
+            
+            #tooltip {
+                font-size: 12px;
+                padding: 10px 12px;
+                max-width: 200px;
+            }
+            
+            .tooltip-title {
+                font-size: 14px;
+            }
+            
+            .tooltip-info {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CRIMEA VS VOLYN OBLAST</h1>
+    <p class="subtitle">Objects stored in the State Hermitage · Independence Period (1991-2015)</p>
+    <p class="subtitle" style="font-size: 13px; margin-top: -20px;">Hover over clusters to see details · Click to highlight</p>
+    
+    <div class="canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div id="tooltip"></div>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <span class="color-box" style="background: #C94A38;"></span>
+            <span>Crimea (798 objects)</span>
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background: #96babc;"></span>
+            <span>Volyn Oblast (32 objects)</span>
+        </div>
+    </div>
+
+    <script>
+        // Data for each region
+        const regionData = [
+            {name: "Crimea", count: 798, period: "Independence Period", dates: "1991-2015", color: "#C94A38"},
+            {name: "Volyn Oblast", count: 32, period: "Independence Period", dates: "1991-2015", color: "#96babc"}
+        ];
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const tooltip = document.getElementById('tooltip');
+        
+        let clusters = [];
+        let hoveredCluster = null;
+        let selectedCluster = null;
+        let canvasWidth, canvasHeight;
+        let isMobile = false;
+
+        // Get responsive positions based on screen size
+        function getPositions() {
+            isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // Mobile: vertical layout
+                return [
+                    {x: canvasWidth / 2, y: canvasHeight * 0.3},   // Crimea (top)
+                    {x: canvasWidth / 2, y: canvasHeight * 0.7}    // Volyn Oblast (bottom)
+                ];
+            } else {
+                // Desktop: horizontal layout
+                return [
+                    {x: canvasWidth * 0.32, y: canvasHeight / 2},   // Crimea (left)
+                    {x: canvasWidth * 0.68, y: canvasHeight / 2}    // Volyn Oblast (right)
+                ];
+            }
+        }
+
+        // Set canvas size based on viewport
+        function setCanvasSize() {
+            const container = document.querySelector('.canvas-container');
+            const maxWidth = Math.min(container.clientWidth, 1400);
+            
+            if (window.innerWidth <= 768) {
+                // Mobile
+                canvasWidth = maxWidth;
+                canvasHeight = window.innerHeight * 0.7; // 70% of viewport height
+                canvasHeight = Math.max(500, Math.min(canvasHeight, 800));
+            } else {
+                // Desktop
+                canvasWidth = maxWidth;
+                canvasHeight = canvasWidth * 0.43; // Aspect ratio
+                canvasHeight = Math.max(400, Math.min(canvasHeight, 600));
+            }
+            
+            canvas.width = canvasWidth;
+            canvas.height = canvasHeight;
+        }
+
+        // Generate clusters with points
+        function generateCluster(region, position, index) {
+            const maxCount = regionData[0].count;
+            const minCount = regionData[regionData.length - 1].count;
+            
+            // Calculate radius based on count and screen size
+            const scaleFactor = isMobile ? 0.6 : 1;
+            const baseRadius = (80 + (region.count - minCount) / (maxCount - minCount) * 100) * scaleFactor;
+            
+            // Generate points
+            const numPoints = Math.min(Math.floor(region.count / 1.5), 2000);
+            
+            const points = [];
+            for (let i = 0; i < numPoints; i++) {
+                // Normal distribution for clustering
+                const r = Math.abs(normalRandom() * baseRadius / 2.5);
+                const limitedR = Math.min(r, baseRadius);
+                const theta = Math.random() * 2 * Math.PI;
+                
+                const px = position.x + limitedR * Math.cos(theta);
+                const py = position.y + limitedR * Math.sin(theta);
+                
+                const size = (isMobile ? 2 : 3) + Math.random() * 2;
+                const alpha = 0.6 + Math.random() * 0.25;
+                
+                points.push({x: px, y: py, size, alpha});
+            }
+            
+            return {
+                region,
+                position,
+                radius: baseRadius,
+                points,
+                index
+            };
+        }
+
+        // Normal distribution random generator
+        function normalRandom() {
+            let u = 0, v = 0;
+            while(u === 0) u = Math.random();
+            while(v === 0) v = Math.random();
+            return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+        }
+
+        // Initialize clusters
+        function initClusters() {
+            clusters = [];
+            const positions = getPositions();
+            regionData.forEach((region, i) => {
+                clusters.push(generateCluster(region, positions[i], i));
+            });
+        }
+
+        // Draw function
+        function draw() {
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+            
+            clusters.forEach(cluster => {
+                const isHovered = hoveredCluster === cluster.index;
+                const isSelected = selectedCluster === cluster.index;
+                const isDimmed = (hoveredCluster !== null && !isHovered) || (selectedCluster !== null && !isSelected);
+                
+                // Draw points
+                cluster.points.forEach(point => {
+                    ctx.fillStyle = cluster.region.color;
+                    ctx.globalAlpha = isDimmed ? point.alpha * 0.3 : (isHovered || isSelected ? point.alpha * 1.2 : point.alpha);
+                    
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, point.size, 0, 2 * Math.PI);
+                    ctx.fill();
+                });
+                
+                ctx.globalAlpha = 1;
+                
+                // Draw label with responsive font sizes
+                const labelAlpha = isDimmed ? 0.4 : 1;
+                ctx.globalAlpha = labelAlpha;
+                ctx.fillStyle = '#5C3317';
+                
+                const fontSize = isMobile ? 16 : 20;
+                ctx.font = `bold ${fontSize}px Montserrat`;
+                ctx.textAlign = 'center';
+                ctx.fillText(cluster.region.name, cluster.position.x, cluster.position.y - 10);
+                
+                const countFontSize = isMobile ? 14 : 16;
+                ctx.font = `bold ${countFontSize}px Montserrat`;
+                ctx.fillText(`${cluster.region.count.toLocaleString()} objects`, cluster.position.x, cluster.position.y + 10);
+                
+                const datesFontSize = isMobile ? 12 : 14;
+                ctx.font = `italic ${datesFontSize}px Montserrat`;
+                ctx.fillText(cluster.region.dates, cluster.position.x, cluster.position.y + 30);
+                
+                ctx.globalAlpha = 1;
+            });
+        }
+
+        // Get mouse/touch position
+        function getEventPosition(e) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            
+            return {
+                x: (clientX - rect.left) * scaleX,
+                y: (clientY - rect.top) * scaleY,
+                pageX: clientX,
+                pageY: clientY
+            };
+        }
+
+        // Mouse/touch move handler
+        function handleMove(e) {
+            const pos = getEventPosition(e);
+            
+            let found = false;
+            for (let i = 0; i < clusters.length; i++) {
+                const cluster = clusters[i];
+                const dx = pos.x - cluster.position.x;
+                const dy = pos.y - cluster.position.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < cluster.radius) {
+                    hoveredCluster = i;
+                    found = true;
+                    
+                    // Show tooltip
+                    const totalObjects = 798 + 32;
+                    tooltip.innerHTML = `
+                        <div class="tooltip-title">${cluster.region.name}</div>
+                        <div class="tooltip-info"><strong>${cluster.region.count.toLocaleString()}</strong> objects (${(cluster.region.count / totalObjects * 100).toFixed(1)}%)</div>
+                        <div class="tooltip-info">Period: ${cluster.region.period}</div>
+                        <div class="tooltip-info">Years: ${cluster.region.dates}</div>
+                    `;
+                    tooltip.className = 'visible';
+                    tooltip.style.left = (pos.pageX + 15) + 'px';
+                    tooltip.style.top = (pos.pageY - 15) + 'px';
+                    
+                    canvas.style.cursor = 'pointer';
+                    break;
+                }
+            }
+            
+            if (!found) {
+                hoveredCluster = null;
+                tooltip.className = '';
+                canvas.style.cursor = 'default';
+            }
+            
+            draw();
+        }
+
+        // Click/tap handler
+        function handleClick(e) {
+            if (hoveredCluster !== null) {
+                selectedCluster = selectedCluster === hoveredCluster ? null : hoveredCluster;
+                draw();
+            }
+        }
+
+        // Mouse leave handler
+        function handleLeave() {
+            hoveredCluster = null;
+            tooltip.className = '';
+            draw();
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Mouse events
+            canvas.addEventListener('mousemove', handleMove);
+            canvas.addEventListener('click', handleClick);
+            canvas.addEventListener('mouseleave', handleLeave);
+            
+            // Touch events
+            canvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                handleMove(e);
+            });
+            
+            canvas.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                handleMove(e);
+            });
+            
+            canvas.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                if (hoveredCluster !== null) {
+                    handleClick(e);
+                }
+                setTimeout(handleLeave, 300);
+            });
+        }
+
+        // Resize handler
+        function handleResize() {
+            setCanvasSize();
+            initClusters();
+            draw();
+        }
+
+        // Initialize
+        function init() {
+            setCanvasSize();
+            initClusters();
+            setupEventListeners();
+            draw();
+        }
+
+        // Debounced resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(handleResize, 250);
+        });
+
+        // Start
+        init();
+    </script>
+</body>
+</html>

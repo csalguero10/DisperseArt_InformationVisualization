@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukrainian Objects by Category - Interactive Bubbles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #FBF8F3 0%, #F5F0E8 100%);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #5C3317;
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            color: #8B6545;
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+            z-index: 10;
+        }
+
+        #canvas-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 700px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        #tooltip {
+            position: absolute;
+            background: rgba(92, 51, 23, 0.95);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            min-width: 200px;
+        }
+
+        #tooltip.visible {
+            opacity: 1;
+        }
+
+        .tooltip-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+        }
+
+        .tooltip-info {
+            margin: 4px 0;
+            font-size: 13px;
+        }
+
+        .controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            font-family: 'Roboto', sans-serif;
+            padding: 8px 15px;
+            background: #C94A38;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #B8403A;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 11px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .legend-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #5C3317;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            #canvas-container {
+                height: 500px;
+            }
+
+            .legend {
+                font-size: 9px;
+                padding: 8px;
+                bottom: 10px;
+                left: 10px;
+            }
+
+            .legend-title {
+                font-size: 10px;
+            }
+
+            .controls {
+                top: 10px;
+                right: 10px;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            button {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+            }
+
+            #canvas-container {
+                height: 400px;
+            }
+
+            .legend {
+                font-size: 8px;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ukrainian Objects by Category</h1>
+    <p class="subtitle">Interactive Bubble Chart · Hover for details · Click to shake</p>
+
+    <div id="canvas-container">
+        <div class="controls">
+            <button onclick="resetBubbles()">Reset</button>
+            <button onclick="toggleGravity()">Toggle Gravity</button>
+        </div>
+        <div class="legend">
+            <div class="legend-title">Size = Number of Objects</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #C94A38;"></div>
+                <span>Major categories (>1000)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #D4634A;"></div>
+                <span>Medium categories (>500)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #E8C4B8;"></div>
+                <span>Small categories</span>
+            </div>
+        </div>
+        <div id="tooltip"></div>
+    </div>
+
+    <script>
+        // Datos de categorías
+        const categories = [
+            {name: "Ceramic Products", count: 6670, color: "#C94A38"},
+            {name: "Stone Products", count: 3520, color: "#C94A38"},
+            {name: "Metal Products", count: 3335, color: "#C94A38"},
+            {name: "Bone Products", count: 373, color: "#D4634A"},
+            {name: "Glass Products", count: 288, color: "#D4634A"},
+            {name: "Construction Materials", count: 86, color: "#E8C4B8"},
+            {name: "Wood Products", count: 57, color: "#E8C4B8"},
+            {name: "Shell & Marine Products", count: 22, color: "#E8C4B8"},
+            {name: "Resin & Amber Products", count: 20, color: "#E8C4B8"},
+            {name: "Leather Products", count: 12, color: "#E8C4B8"},
+            {name: "Textile & Fiber Products", count: 8, color: "#E8C4B8"},
+            {name: "Minerals", count: 6, color: "#E8C4B8"}
+        ];
+
+        const totalObjects = categories.reduce((sum, cat) => sum + cat.count, 0);
+
+        // Matter.js setup
+        const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint, Events } = Matter;
+
+        const container = document.getElementById('canvas-container');
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
+
+        const engine = Engine.create({
+            gravity: { x: 0, y: 0.3, scale: 0.001 }
+        });
+
+        const render = Render.create({
+            element: container,
+            engine: engine,
+            options: {
+                width: containerWidth,
+                height: containerHeight,
+                wireframes: false,
+                background: 'transparent'
+            }
+        });
+
+        // Crear paredes invisibles
+        const wallThickness = 50;
+        const walls = [
+            Bodies.rectangle(containerWidth / 2, -wallThickness / 2, containerWidth, wallThickness, 
+                { isStatic: true, render: { visible: false } }),
+            Bodies.rectangle(containerWidth / 2, containerHeight + wallThickness / 2, containerWidth, wallThickness, 
+                { isStatic: true, render: { visible: false } }),
+            Bodies.rectangle(-wallThickness / 2, containerHeight / 2, wallThickness, containerHeight, 
+                { isStatic: true, render: { visible: false } }),
+            Bodies.rectangle(containerWidth + wallThickness / 2, containerHeight / 2, wallThickness, containerHeight, 
+                { isStatic: true, render: { visible: false } })
+        ];
+
+        Composite.add(engine.world, walls);
+
+        // Calcular tamaño de burbujas (ajustado para móvil)
+        const isMobile = containerWidth < 768;
+        const maxCount = Math.max(...categories.map(c => c.count));
+        const minRadius = isMobile ? 20 : 25;
+        const maxRadius = isMobile ? 100 : 150;
+
+        const bubbles = [];
+
+        categories.forEach((category, index) => {
+            // Tamaño proporcional al conteo
+            const radius = minRadius + (category.count / maxCount) * (maxRadius - minRadius);
+            
+            // Posición inicial aleatoria pero dentro del canvas
+            const x = Math.random() * (containerWidth - 2 * radius) + radius;
+            const y = Math.random() * (containerHeight - 2 * radius) + radius;
+
+            const circle = Bodies.circle(x, y, radius, {
+                restitution: 0.7,
+                friction: 0.05,
+                density: 0.004,
+                render: {
+                    fillStyle: category.color,
+                    strokeStyle: 'white',
+                    lineWidth: 3
+                },
+                categoryData: category
+            });
+
+            bubbles.push(circle);
+            Composite.add(engine.world, circle);
+        });
+
+        // Mouse control
+        const mouse = Mouse.create(render.canvas);
+        const mouseConstraint = MouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: {
+                stiffness: 0.2,
+                render: { visible: false }
+            }
+        });
+
+        Composite.add(engine.world, mouseConstraint);
+
+        // Tooltip
+        const tooltip = document.getElementById('tooltip');
+        let hoveredBubble = null;
+
+        render.canvas.addEventListener('mousemove', (e) => {
+            const rect = render.canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            hoveredBubble = null;
+
+            bubbles.forEach(bubble => {
+                const dx = bubble.position.x - mouseX;
+                const dy = bubble.position.y - mouseY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < bubble.circleRadius) {
+                    hoveredBubble = bubble;
+                }
+            });
+
+            if (hoveredBubble) {
+                const data = hoveredBubble.categoryData;
+                const percentage = (data.count / totalObjects * 100).toFixed(2);
+                
+                tooltip.innerHTML = `
+                    <div class="tooltip-title">${data.name}</div>
+                    <div class="tooltip-info"><strong>${data.count.toLocaleString()}</strong> objects</div>
+                    <div class="tooltip-info">${percentage}% of total collection</div>
+                `;
+                tooltip.className = 'visible';
+                
+                // Ajustar posición del tooltip para evitar que salga de pantalla
+                let tooltipX = e.clientX + 15;
+                let tooltipY = e.clientY - 15;
+                
+                // Si está muy a la derecha, mover a la izquierda
+                if (tooltipX + 220 > window.innerWidth) {
+                    tooltipX = e.clientX - 235;
+                }
+                
+                // Si está muy arriba, mover hacia abajo
+                if (tooltipY < 10) {
+                    tooltipY = e.clientY + 15;
+                }
+                
+                tooltip.style.left = tooltipX + 'px';
+                tooltip.style.top = tooltipY + 'px';
+                
+                render.canvas.style.cursor = 'pointer';
+            } else {
+                tooltip.className = '';
+                render.canvas.style.cursor = 'default';
+            }
+        });
+
+        // Labels en las burbujas (solo para burbujas grandes)
+        Events.on(render, 'afterRender', () => {
+            const context = render.context;
+            
+            bubbles.forEach(bubble => {
+                const data = bubble.categoryData;
+                const pos = bubble.position;
+                const radius = bubble.circleRadius;
+                
+                // Solo mostrar texto si el radio es mayor a 60px
+                // Para burbujas pequeñas, el texto solo aparece en el tooltip
+                if (radius > 60) {
+                    context.fillStyle = 'white';
+                    context.textAlign = 'center';
+                    context.textBaseline = 'middle';
+                    
+                    // Ajustar tamaño de fuente según el radio
+                    const fontSize = Math.min(14, Math.max(10, radius / 8));
+                    
+                    // Nombre de categoría
+                    context.font = `bold ${fontSize}px Montserrat`;
+                    const nameLines = data.name.split(' ');
+                    
+                    // Limitar líneas para burbujas medianas
+                    const maxLines = radius > 100 ? nameLines.length : Math.min(2, nameLines.length);
+                    
+                    for (let i = 0; i < maxLines; i++) {
+                        context.fillText(nameLines[i], pos.x, pos.y - 10 + (i * (fontSize + 2)));
+                    }
+                    
+                    // Número
+                    context.font = `${fontSize - 2}px Roboto`;
+                    context.fillText(data.count.toLocaleString(), pos.x, pos.y + maxLines * (fontSize + 2) + 5);
+                }
+            });
+        });
+
+        // Funciones de control
+        function resetBubbles() {
+            bubbles.forEach((bubble, index) => {
+                const x = Math.random() * (containerWidth - 2 * bubble.circleRadius) + bubble.circleRadius;
+                const y = Math.random() * (containerHeight - 2 * bubble.circleRadius) + bubble.circleRadius;
+                Matter.Body.setPosition(bubble, { x, y });
+                Matter.Body.setVelocity(bubble, { x: 0, y: 0 });
+            });
+        }
+
+        let gravityEnabled = true;
+        function toggleGravity() {
+            gravityEnabled = !gravityEnabled;
+            engine.gravity.y = gravityEnabled ? 0.3 : 0;
+        }
+
+        // Click para sacudir
+        render.canvas.addEventListener('click', (e) => {
+            if (hoveredBubble) {
+                const force = { x: (Math.random() - 0.5) * 0.05, y: (Math.random() - 0.5) * 0.05 };
+                Matter.Body.applyForce(hoveredBubble, hoveredBubble.position, force);
+            }
+        });
+
+        // Soporte táctil para móviles
+        let touchHoveredBubble = null;
+        
+        render.canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const rect = render.canvas.getBoundingClientRect();
+            const touchX = touch.clientX - rect.left;
+            const touchY = touch.clientY - rect.top;
+
+            touchHoveredBubble = null;
+
+            bubbles.forEach(bubble => {
+                const dx = bubble.position.x - touchX;
+                const dy = bubble.position.y - touchY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < bubble.circleRadius) {
+                    touchHoveredBubble = bubble;
+                }
+            });
+
+            if (touchHoveredBubble) {
+                const data = touchHoveredBubble.categoryData;
+                const percentage = (data.count / totalObjects * 100).toFixed(2);
+                
+                tooltip.innerHTML = `
+                    <div class="tooltip-title">${data.name}</div>
+                    <div class="tooltip-info"><strong>${data.count.toLocaleString()}</strong> objects</div>
+                    <div class="tooltip-info">${percentage}% of total collection</div>
+                `;
+                tooltip.className = 'visible';
+                
+                let tooltipX = touch.clientX + 15;
+                let tooltipY = touch.clientY - 15;
+                
+                if (tooltipX + 220 > window.innerWidth) {
+                    tooltipX = touch.clientX - 235;
+                }
+                if (tooltipY < 10) {
+                    tooltipY = touch.clientY + 15;
+                }
+                
+                tooltip.style.left = tooltipX + 'px';
+                tooltip.style.top = tooltipY + 'px';
+                
+                // Aplicar fuerza
+                const force = { x: (Math.random() - 0.5) * 0.05, y: (Math.random() - 0.5) * 0.05 };
+                Matter.Body.applyForce(touchHoveredBubble, touchHoveredBubble.position, force);
+            }
+        });
+
+        render.canvas.addEventListener('touchend', () => {
+            tooltip.className = '';
+            touchHoveredBubble = null;
+        });
+
+        // Run
+        Render.run(render);
+        const runner = Runner.create();
+        Runner.run(runner, engine);
+
+        // Responsive - Actualizar canvas y física al cambiar tamaño
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newWidth = container.clientWidth;
+                const newHeight = container.clientHeight;
+                
+                // Actualizar tamaño del canvas
+                render.canvas.width = newWidth;
+                render.canvas.height = newHeight;
+                render.options.width = newWidth;
+                render.options.height = newHeight;
+                
+                // Actualizar paredes
+                Composite.remove(engine.world, walls);
+                
+                const newWalls = [
+                    Bodies.rectangle(newWidth / 2, -wallThickness / 2, newWidth, wallThickness, 
+                        { isStatic: true, render: { visible: false } }),
+                    Bodies.rectangle(newWidth / 2, newHeight + wallThickness / 2, newWidth, wallThickness, 
+                        { isStatic: true, render: { visible: false } }),
+                    Bodies.rectangle(-wallThickness / 2, newHeight / 2, wallThickness, newHeight, 
+                        { isStatic: true, render: { visible: false } }),
+                    Bodies.rectangle(newWidth + wallThickness / 2, newHeight / 2, wallThickness, newHeight, 
+                        { isStatic: true, render: { visible: false } })
+                ];
+                
+                walls.length = 0;
+                walls.push(...newWalls);
+                Composite.add(engine.world, newWalls);
+                
+                // Reposicionar burbujas que estén fuera del nuevo canvas
+                bubbles.forEach(bubble => {
+                    const pos = bubble.position;
+                    const radius = bubble.circleRadius;
+                    
+                    if (pos.x - radius < 0 || pos.x + radius > newWidth || 
+                        pos.y - radius < 0 || pos.y + radius > newHeight) {
+                        const newX = Math.max(radius, Math.min(newWidth - radius, pos.x));
+                        const newY = Math.max(radius, Math.min(newHeight - radius, pos.y));
+                        Matter.Body.setPosition(bubble, { x: newX, y: newY });
+                    }
+                });
+            }, 250);
+        });
+    </script>
+</body>
+</html>
