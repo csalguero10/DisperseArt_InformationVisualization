@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Red List vs Stolen – mapped to ICOM categories</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 0;
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    }
+    .viz-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    p.subtitle {
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 22px;
+      color: #555;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+  <div class="viz-wrapper">
+    <h1>
+      What the <span style="color:#C0392B;">Red List</span> anticipates vs what is actually <span style="color:#7F8C8D;">stolen</span>
+    </h1>
+    <p class="subtitle">
+      Stolen objects are mapped to ICOM-style categories using operational rules based on object type and descriptive cues
+      (icons, manuscripts/books, liturgical objects, and archaeological-context proxies). Archaeology uses an optional date support
+      threshold of ≤ 1500 only when paired with weak material cues.
+    </p>
+
+    <div id="vis"></div>
+  </div>
+
+  <script>
+    vegaEmbed("#vis", {"$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "background": "white", "config": {"view": {"continuousHeight": 300, "continuousWidth": 300, "strokeWidth": 0}}, "data": {"name": "data-2abe488c0baa3ef451f3623cfa030173"}, "datasets": {"data-2abe488c0baa3ef451f3623cfa030173": [{"Category": "PAINTINGS", "Share": 0.1320754716981132, "Share_Label": "13.2%", "Source": "Red List (ICOM risk categories)"}, {"Category": "PAINTINGS", "Share": 0.37385220813292525, "Share_Label": "37.4%", "Source": "Stolen objects (mapped to ICOM)"}, {"Category": "ARCHAEOLOGY", "Share": 0.3018867924528302, "Share_Label": "30.2%", "Source": "Red List (ICOM risk categories)"}, {"Category": "ARCHAEOLOGY", "Share": 0.26366418889374726, "Share_Label": "26.4%", "Source": "Stolen objects (mapped to ICOM)"}, {"Category": "ICONS", "Share": 0.05660377358490566, "Share_Label": "5.7%", "Source": "Red List (ICOM risk categories)"}, {"Category": "ICONS", "Share": 0.013992129427197202, "Share_Label": "1.4%", "Source": "Stolen objects (mapped to ICOM)"}, {"Category": "BOOKS / MANUSCRIPTS", "Share": 0.1320754716981132, "Share_Label": "13.2%", "Source": "Red List (ICOM risk categories)"}, {"Category": "BOOKS / MANUSCRIPTS", "Share": 0.003060778312199388, "Share_Label": "0.3%", "Source": "Stolen objects (mapped to ICOM)"}, {"Category": "RELIGIOUS OBJECTS", "Share": 0.11320754716981132, "Share_Label": "11.3%", "Source": "Red List (ICOM risk categories)"}, {"Category": "RELIGIOUS OBJECTS", "Share": 0.014429383471797114, "Share_Label": "1.4%", "Source": "Stolen objects (mapped to ICOM)"}]}, "height": 450, "layer": [{"encoding": {"color": {"field": "Source", "legend": {"direction": "vertical", "labelFontSize": 12, "orient": "top-right", "title": null}, "scale": {"domain": ["Red List (ICOM risk categories)", "Stolen objects (mapped to ICOM)"], "range": ["#C0392B", "#7F8C8D"]}, "type": "nominal"}, "tooltip": [{"field": "Category", "title": "Category", "type": "nominal"}, {"field": "Source", "title": "Source", "type": "nominal"}, {"field": "Share_Label", "title": "Share", "type": "nominal"}], "x": {"axis": {"labelAngle": 0, "labelColor": "#333", "labelPadding": 10}, "field": "Category", "sort": ["PAINTINGS", "ARCHAEOLOGY", "ICONS", "BOOKS / MANUSCRIPTS", "RELIGIOUS OBJECTS"], "title": null, "type": "nominal"}, "xOffset": {"field": "Source", "type": "nominal"}, "y": {"axis": null, "field": "Share", "scale": {"domain": [0, 0.429930039352864]}, "title": null, "type": "quantitative"}}, "mark": {"cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4, "size": 40, "type": "bar"}}, {"encoding": {"color": {"field": "Source", "legend": {"direction": "vertical", "labelFontSize": 12, "orient": "top-right", "title": null}, "scale": {"domain": ["Red List (ICOM risk categories)", "Stolen objects (mapped to ICOM)"], "range": ["#C0392B", "#7F8C8D"]}, "type": "nominal"}, "text": {"field": "Share_Label", "type": "nominal"}, "x": {"axis": {"labelAngle": 0, "labelColor": "#333", "labelPadding": 10}, "field": "Category", "sort": ["PAINTINGS", "ARCHAEOLOGY", "ICONS", "BOOKS / MANUSCRIPTS", "RELIGIOUS OBJECTS"], "title": null, "type": "nominal"}, "xOffset": {"field": "Source", "type": "nominal"}, "y": {"field": "Share", "type": "quantitative"}}, "mark": {"align": "center", "baseline": "middle", "color": "white", "dy": -10, "fontSize": 14, "fontWeight": "bold", "type": "text"}}], "width": 800}, { actions: false });
+  </script>
+</body>
+</html>
