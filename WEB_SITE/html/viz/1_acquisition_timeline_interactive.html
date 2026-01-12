@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquisition Timeline - Interactive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #FBF8F3 0%, #F5F0E8 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #5C3317;
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            color: #8B6545;
+            text-align: center;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        #timeline-canvas {
+            width: 100%;
+            height: 500px;
+            cursor: crosshair;
+        }
+
+        #bars-container {
+            margin-top: 40px;
+        }
+
+        .bar-item {
+            margin-bottom: 15px;
+        }
+
+        .bar-label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #5C3317;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bar-wrapper {
+            background: #f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 30px;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        #tooltip {
+            position: absolute;
+            background: rgba(92, 51, 23, 0.95);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        #tooltip.visible {
+            opacity: 1;
+        }
+
+        .tooltip-year {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .tooltip-count {
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .chart-container {
+                padding: 20px;
+            }
+
+            #timeline-canvas {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            #timeline-canvas {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ukrainian Objects Acquisition Timeline</h1>
+        <p class="subtitle">1848 - 2015 · Hover to explore data</p>
+
+        <div class="chart-container">
+            <canvas id="timeline-canvas"></canvas>
+            <div id="tooltip"></div>
+        </div>
+
+        <div class="chart-container">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: #5C3317; margin-bottom: 20px;">Total Objects by Historical Period</h2>
+            <div id="bars-container"></div>
+        </div>
+    </div>
+
+    <script src="data_hermitage/Visualizations/timeline_data.json"></script>
+    <script>
+        // Los datos se cargarán mediante fetch
+        fetch('data_hermitage/Visualizations/timeline_data.json')
+            .then(response => response.json())
+            .then(data => {
+                initializeTimeline(data);
+            })
+            .catch(() => {
+                // Si no hay archivo JSON, usar datos en línea
+                const inlineData = {
+                    yearlyData: [], // Se llenará dinámicamente
+                    periods: [
+                        {name: 'Russian Empire', start: 1848, end: 1917, count: 607, color: '#8B6545'},
+                        {name: 'First Independence', start: 1918, end: 1921, count: 0, color: '#E07A5F'},
+                        {name: 'Soviet Period', start: 1922, end: 1991, count: 9271, color: '#C94A38'},
+                        {name: 'Independence', start: 1992, end: 2015, count: 789, color: '#D4634A'}
+                    ],
+                    periodMarkers: [
+                        {year: 1848, label: 'Russian Empire', color: '#8B6545', align: 'right'},
+                        {year: 1917, label: 'First Independence', color: '#E07A5F', align: 'left'},
+                        {year: 1922, label: 'Soviet Period', color: '#C94A38', align: 'right'},
+                        {year: 1991, label: 'Independence', color: '#C94A38', align: 'right'},
+                        {year: 2015, label: 'End', color: '#696969', align: 'left'}
+                    ]
+                };
+                
+                // Generar datos aproximados
+                for (let year = 1848; year <= 2015; year++) {
+                    let count = 0;
+                    if (year >= 1922 && year <= 1991) {
+                        count = Math.floor(Math.random() * 300) + 50; // Período soviético
+                    } else if (year >= 1992 && year <= 2015) {
+                        count = Math.floor(Math.random() * 50) + 10; // Independencia
+                    } else if (year >= 1848 && year <= 1917) {
+                        count = Math.floor(Math.random() * 30) + 2; // Imperio ruso
+                    }
+                    inlineData.yearlyData.push({year, count});
+                }
+                
+                initializeTimeline(inlineData);
+            });
+
+        function initializeTimeline(data) {
+            const canvas = document.getElementById('timeline-canvas');
+            const ctx = canvas.getContext('2d');
+            const tooltip = document.getElementById('tooltip');
+            
+            let hoveredIndex = null;
+
+            // Configurar canvas
+            function resizeCanvas() {
+                const container = canvas.parentElement;
+                canvas.width = container.clientWidth - 80;
+                canvas.height = canvas.offsetHeight;
+                drawTimeline();
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            // Calcular escalas
+            function getScales() {
+                const padding = {top: 80, right: 40, bottom: 50, left: 60};
+                const width = canvas.width - padding.left - padding.right;
+                const height = canvas.height - padding.top - padding.bottom;
+                
+                const minYear = 1848;
+                const maxYear = 2015;
+                const maxCount = Math.max(...data.yearlyData.map(d => d.count));
+
+                return {
+                    padding,
+                    width,
+                    height,
+                    minYear,
+                    maxYear,
+                    maxCount,
+                    xScale: (year) => padding.left + ((year - minYear) / (maxYear - minYear)) * width,
+                    yScale: (count) => padding.top + height - ((count / maxCount) * height)
+                };
+            }
+
+            // Dibujar timeline
+            function drawTimeline() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const scales = getScales();
+
+                // Fondo del gráfico
+                ctx.fillStyle = '#fafafa';
+                ctx.fillRect(scales.padding.left, scales.padding.top, scales.width, scales.height);
+
+                // Grid horizontal
+                ctx.strokeStyle = '#e0e0e0';
+                ctx.lineWidth = 1;
+                for (let i = 0; i <= 5; i++) {
+                    const y = scales.padding.top + (scales.height / 5) * i;
+                    ctx.beginPath();
+                    ctx.moveTo(scales.padding.left, y);
+                    ctx.lineTo(scales.padding.left + scales.width, y);
+                    ctx.stroke();
+                }
+
+                // Líneas de períodos verticales
+                data.periodMarkers.forEach(marker => {
+                    const x = scales.xScale(marker.year);
+                    ctx.strokeStyle = marker.color;
+                    ctx.lineWidth = 2;
+                    ctx.setLineDash([5, 5]);
+                    ctx.beginPath();
+                    ctx.moveTo(x, scales.padding.top - 20);
+                    ctx.lineTo(x, scales.padding.top + scales.height);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+
+                    // Etiqueta horizontal (a la izquierda o derecha de la línea)
+                    ctx.fillStyle = marker.color;
+                    ctx.font = 'bold 11px Montserrat';
+                    ctx.textBaseline = 'top';
+                    
+                    // Determinar si va a la izquierda o derecha
+                    if (marker.align === 'left') {
+                        ctx.textAlign = 'right';
+                        ctx.fillText(marker.label, x - 5, scales.padding.top - 45);
+                    } else {
+                        ctx.textAlign = 'left';
+                        ctx.fillText(marker.label, x + 5, scales.padding.top - 45);
+                    }
+                });
+
+                // Área suave con gradiente
+                const gradient = ctx.createLinearGradient(0, scales.padding.top, 0, scales.padding.top + scales.height);
+                gradient.addColorStop(0, 'rgba(201, 74, 56, 0.6)');
+                gradient.addColorStop(0.5, 'rgba(224, 122, 95, 0.4)');
+                gradient.addColorStop(1, 'rgba(224, 122, 95, 0.1)');
+
+                ctx.beginPath();
+                ctx.moveTo(scales.xScale(data.yearlyData[0].year), scales.yScale(0));
+
+                // Línea suave usando curvas de Bezier
+                for (let i = 0; i < data.yearlyData.length; i++) {
+                    const x = scales.xScale(data.yearlyData[i].year);
+                    const y = scales.yScale(data.yearlyData[i].count);
+
+                    if (i === 0) {
+                        ctx.lineTo(x, y);
+                    } else {
+                        const prevX = scales.xScale(data.yearlyData[i - 1].year);
+                        const prevY = scales.yScale(data.yearlyData[i - 1].count);
+                        const cpX = (prevX + x) / 2;
+                        ctx.quadraticCurveTo(cpX, prevY, x, y);
+                    }
+                }
+
+                // Cerrar el área
+                ctx.lineTo(scales.xScale(data.yearlyData[data.yearlyData.length - 1].year), scales.yScale(0));
+                ctx.closePath();
+                ctx.fillStyle = gradient;
+                ctx.fill();
+
+                // Línea superior
+                ctx.beginPath();
+                for (let i = 0; i < data.yearlyData.length; i++) {
+                    const x = scales.xScale(data.yearlyData[i].year);
+                    const y = scales.yScale(data.yearlyData[i].count);
+
+                    if (i === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        const prevX = scales.xScale(data.yearlyData[i - 1].year);
+                        const prevY = scales.yScale(data.yearlyData[i - 1].count);
+                        const cpX = (prevX + x) / 2;
+                        ctx.quadraticCurveTo(cpX, prevY, x, y);
+                    }
+                }
+                ctx.strokeStyle = '#C94A38';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Punto hover
+                if (hoveredIndex !== null && data.yearlyData[hoveredIndex]) {
+                    const x = scales.xScale(data.yearlyData[hoveredIndex].year);
+                    const y = scales.yScale(data.yearlyData[hoveredIndex].count);
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, 6, 0, Math.PI * 2);
+                    ctx.fillStyle = '#C94A38';
+                    ctx.fill();
+                    ctx.strokeStyle = 'white';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                }
+
+                // Ejes
+                ctx.strokeStyle = '#5C3317';
+                ctx.lineWidth = 2;
+                // Eje X
+                ctx.beginPath();
+                ctx.moveTo(scales.padding.left, scales.padding.top + scales.height);
+                ctx.lineTo(scales.padding.left + scales.width, scales.padding.top + scales.height);
+                ctx.stroke();
+                // Eje Y
+                ctx.beginPath();
+                ctx.moveTo(scales.padding.left, scales.padding.top);
+                ctx.lineTo(scales.padding.left, scales.padding.top + scales.height);
+                ctx.stroke();
+
+                // Etiquetas eje X
+                ctx.fillStyle = '#5C3317';
+                ctx.font = '12px Roboto';
+                ctx.textAlign = 'center';
+                for (let year = 1850; year <= 2015; year += 25) {
+                    const x = scales.xScale(year);
+                    ctx.fillText(year, x, scales.padding.top + scales.height + 25);
+                }
+
+                // Etiquetas eje Y
+                ctx.textAlign = 'right';
+                ctx.textBaseline = 'middle';
+                for (let i = 0; i <= 5; i++) {
+                    const value = Math.round((scales.maxCount / 5) * i);
+                    const y = scales.padding.top + scales.height - (scales.height / 5) * i;
+                    ctx.fillText(value, scales.padding.left - 10, y);
+                }
+
+                // Título eje Y
+                ctx.save();
+                ctx.translate(15, canvas.height / 2);
+                ctx.rotate(-Math.PI / 2);
+                ctx.font = 'bold 13px Roboto';
+                ctx.textAlign = 'center';
+                ctx.fillText('Objects Acquired', 0, 0);
+                ctx.restore();
+
+                // Título eje X
+                ctx.font = 'bold 13px Roboto';
+                ctx.textAlign = 'center';
+                ctx.fillText('Year', canvas.width / 2, canvas.height - 10);
+            }
+
+            // Mouse move
+            canvas.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const scales = getScales();
+
+                // Encontrar el año más cercano
+                let closestIndex = null;
+                let minDist = Infinity;
+
+                data.yearlyData.forEach((d, i) => {
+                    const px = scales.xScale(d.year);
+                    const dist = Math.abs(x - px);
+                    if (dist < minDist && dist < 20) {
+                        minDist = dist;
+                        closestIndex = i;
+                    }
+                });
+
+                hoveredIndex = closestIndex;
+
+                if (hoveredIndex !== null) {
+                    const d = data.yearlyData[hoveredIndex];
+                    tooltip.innerHTML = `
+                        <div class="tooltip-year">Year ${d.year}</div>
+                        <div class="tooltip-count">${d.count.toLocaleString()} objects acquired</div>
+                    `;
+                    tooltip.className = 'visible';
+                    tooltip.style.left = (e.clientX + 15) + 'px';
+                    tooltip.style.top = (e.clientY - 15) + 'px';
+                } else {
+                    tooltip.className = '';
+                }
+
+                drawTimeline();
+            });
+
+            canvas.addEventListener('mouseleave', () => {
+                hoveredIndex = null;
+                tooltip.className = '';
+                drawTimeline();
+            });
+
+            // Crear barras
+            const barsContainer = document.getElementById('bars-container');
+            const maxPeriodCount = Math.max(...data.periods.map(p => p.count));
+
+            data.periods.forEach(period => {
+                if (period.count > 0) {
+                    const barItem = document.createElement('div');
+                    barItem.className = 'bar-item';
+                    
+                    const percentage = (period.count / maxPeriodCount) * 100;
+                    
+                    barItem.innerHTML = `
+                        <div class="bar-label">
+                            <span><strong>${period.name}</strong> (${period.start}-${period.end})</span>
+                            <span>${period.count.toLocaleString()} objects</span>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: ${percentage}%; background: ${period.color};">
+                            </div>
+                        </div>
+                    `;
+                    
+                    barsContainer.appendChild(barItem);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

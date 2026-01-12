@@ -73,7 +73,7 @@
     <button class="menu-button" id="open-button">Open Menu</button>
     <!-- end navigation -->
     <!-- hero section (fixed, no slider) -->
-    <section id="home" class="no-padding" style="background-image: url('../assets/support_ukraine.jpg');
+    <section id="home" class="no-padding" style="background-image: url('images/support_ukraine.jpg');
                 background-size:cover;
                 background-position:center;
                 min-height:100vh;
@@ -827,13 +827,15 @@ From the original UNESCO records, only sites that can be uniquely identified and
                     <div class="tab-content">
                         <!-- TAB: HERMITAGE -->
                         <div role="tabpanel" class="tab-pane fade in active" id="rq-architecture">
+                            
                             <div class="row">
-                                <div class="col-md-6 col-sm-6 projects-text-col">
-                                    <br>
-                                    <h5 class="text-transform-none sm-text-extra-large">Historical Dispersion: Ukrainian
+                    <!-- MODIFICA: col-md-12 senza padding per allineare con la griglia -->
+                    <div class="col-md-12 no-padding">
+                        <div class="architecture-section">
+                            <h5 class="text-transform-none sm-text-extra-large" style="padding-bottom: 30px;">Historical Dispersion: Ukrainian
                                         Heritage in Russian Museums</h5>
-                                    <p class="text-medium">
-                                        This analysis examines the systematic removal and displacement of Ukrainian
+                            <p class="text-medium" style="max-width: none; width: 100%;">
+                                This analysis examines the systematic removal and displacement of Ukrainian
                                         cultural heritage over
                                         centuries of foreign rule, focusing on the Russian Empire and Soviet Union. By
                                         analyzing a dataset
@@ -843,13 +845,25 @@ From the original UNESCO records, only sites that can be uniquely identified and
                                         complexities of restitution
                                         in the face of neo-colonial narratives. The study addresses three core
                                         questions:
-                                    </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 projects-text-col">
+                                    <br>
+                                <h6 class="text-transform-none no-margin sm-text-large">Sub-questions:</h6><br>
                                     <ul>
                                         <li>1. What are the temporal patterns of artifact extraction across historical
                                             periods?</li>
                                         <li>2. Which Ukrainian regions were most affected by cultural displacement?</li>
                                         <li>3. What types of material culture were systematically removed?</li>
+                                        <li>3. How types of material culture were systematically removed?</li>
                                     </ul>
+                                    <br>
                                     <p class="text-medium margin-two-top">
                                         The scale of cultural loss is staggering. Historian Serhiy Kot notes that during
                                         WWII alone, Ukraine
@@ -865,7 +879,7 @@ From the original UNESCO records, only sites that can be uniquely identified and
 
                                 <!-- ========================= VISUAL 1 — DATA PIPELINE ========================= -->
                                 <br>
-                                <h6 class="text-transform-none no-margin sm-text-large">1. Methodology: From 33,391
+                                <h6 class="text-transform-none no-margin sm-text-large">Methodology: From 33,391
                                     objects to 14,508 Ukrainian artifacts</h6><br>
                                 <div class="col-md-6 col-sm-6 projects-text-col">
                                     <p class="text-medium">
@@ -887,15 +901,21 @@ From the original UNESCO records, only sites that can be uniquely identified and
                                         to visualize chronological patterns of acquisition across centuries.
                                     </p>
                                 </div>
-                                <figure class="viz-figure">
-                                    <img src="[URL_TO_PIPELINE_DIAGRAM]"
-                                        alt="Data pipeline showing filtration from 33,391 original items to 14,508 Ukrainian artifacts."
-                                        class="img-fluid">
-                                    <figcaption>
-                                        Data processing pipeline: filtering and cleaning the Hermitage dataset to
-                                        isolate Ukrainian cultural heritage.
-                                    </figcaption>
-                                </figure>
+                                <div class="row projects-viz-row margin-twenty no-margin-lr no-margin-bottom">
+                                    <div class="col-md-12">
+                                        <iframe src="viz/5_hermitage_kepler.html"
+                                            style="width:100%; max-width:1100px; height:750px; border:0; overflow:hidden; display:block; margin:0 auto;"
+                                            title="The Protection Gap – UNESCO vs Damaged Cultural Sites" loading="lazy"
+                                            scrolling="no">
+                                        </iframe>
+                                        <p class="text-small light-gray-text margin-nine no-margin-lr no-margin-bottom">
+                                            Hover on each square to explore individual sites, protection status and type
+                                            of
+                                            heritage.
+                                            Use the category filters to spotlight specific groups of damaged sites.
+                                        </p>
+                                    </div>
+                                </div>
 
                                 <!-- ========================= VISUAL 2 — TEMPORAL ANALYSIS ========================= -->
                                 <br>
@@ -920,6 +940,22 @@ From the original UNESCO records, only sites that can be uniquely identified and
                                         1960-1980 when "union-wide
                                         significance" policies automatically sent valuable finds to Russia.
                                     </p>
+
+                                    <div class="row projects-viz-row margin-twenty no-margin-lr no-margin-bottom">
+                                    <div class="col-md-12">
+                                        <iframe src="viz/2_acquisition_periods_donut_interactive.html"
+                                            style="width:100%; max-width:900px; height:700px; border:0; overflow:hidden; display:block; margin:0 auto;"
+                                            title="The Protection Gap – UNESCO vs Damaged Cultural Sites" loading="lazy"
+                                            scrolling="no">
+                                        </iframe>
+                                        <p class="text-small light-gray-text margin-nine no-margin-lr no-margin-bottom">
+                                            Hover on each square to explore individual sites, protection status and type
+                                            of
+                                            heritage.
+                                            Use the category filters to spotlight specific groups of damaged sites.
+                                        </p>
+                                    </div>
+                                </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 projects-text-col">
                                     <p class="text-medium">
@@ -938,16 +974,24 @@ From the original UNESCO records, only sites that can be uniquely identified and
                                         Hermitage. This was
                                         not accidental but structural—a deliberate policy of cultural centralization.
                                     </p>
+
+                                    <div class="row projects-viz-row margin-twenty no-margin-lr no-margin-bottom">
+                                    <div class="col-md-12">
+                                        <iframe src="viz/1_acquisition_timeline_interactive.html"
+                                            style="width:100%; max-width:1100px; height:750px; border:0; overflow:hidden; display:block; margin:0 auto;"
+                                            title="The Protection Gap – UNESCO vs Damaged Cultural Sites" loading="lazy"
+                                            scrolling="no">
+                                        </iframe>
+                                        <p class="text-small light-gray-text margin-nine no-margin-lr no-margin-bottom">
+                                            Hover on each square to explore individual sites, protection status and type
+                                            of
+                                            heritage.
+                                            Use the category filters to spotlight specific groups of damaged sites.
+                                        </p>
+                                    </div>
                                 </div>
-                                <figure class="viz-figure">
-                                    <img src="[URL_TO_TIMELINE_GRAPH]"
-                                        alt="Timeline showing acquisition volume by historical period, with peak during 1960-1980."
-                                        class="img-fluid">
-                                    <figcaption>
-                                        Temporal distribution of acquisitions (1848–2015): highlighting the Soviet-era
-                                        surge in cultural extraction.
-                                    </figcaption>
-                                </figure>
+                                </div>
+                                
 
                                 <!-- ========================= VISUAL 3 — GEOGRAPHIC DISTRIBUTION ========================= -->
                                 <br>
@@ -1063,6 +1107,7 @@ From the original UNESCO records, only sites that can be uniquely identified and
                                     </p>
                                 </div>
                             </div>
+                        </div>    
 
                             <!-- TAB: CIVIL & STRUCTURAL -->
                             <div role="tabpanel" class="tab-pane fade" id="rq-civil">

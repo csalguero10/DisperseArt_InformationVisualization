@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquisition Periods - Interactive Donut Chart</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 10;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #FBF8F3 0%, #F5F0E8 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #5C3317;
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            color: #8B6545;
+            text-align: center;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        #chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 700px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #tooltip {
+            position: absolute;
+            background: rgba(92, 51, 23, 0.95);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            min-width: 200px;
+        }
+
+        #tooltip.visible {
+            opacity: 1;
+        }
+
+        .tooltip-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+        .tooltip-info {
+            margin: 4px 0;
+            font-size: 13px;
+        }
+
+        .center-text {
+            position: absolute;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .center-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #5C3317;
+            margin-bottom: 5px;
+        }
+
+        .center-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            color: #8B6545;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            #chart-container {
+                height: 400px;
+                max-width: 400px;
+            }
+
+            .center-title {
+                font-size: 1.2rem;
+            }
+
+            .center-subtitle {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            #chart-container {
+                height: 400px;
+                max-width: 400px;
+            }
+
+            .center-title {
+                font-size: 1rem;
+            }
+
+            .center-subtitle {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Distribution by Acquisition Period</h1>
+    <p class="subtitle">Ukrainian Objects in the Hermitage · Hover for details</p>
+
+    <div id="chart-container">
+        <canvas id="donut-canvas"></canvas>
+        <div class="center-text">
+            <div class="center-title">Ukrainian Objects</div>
+            <div class="center-subtitle">Acquisition Periods</div>
+        </div>
+        <div id="tooltip"></div>
+    </div>
+
+    <script>
+        // Datos
+        const data = [
+            {
+                period: '1922-1991',
+                label: 'Soviet Era',
+                count: 7908,
+                percentage: 54.52,
+                color: '#C94A38'
+            },
+            {
+                period: 'Unknown',
+                label: 'No date',
+                count: 3861,
+                percentage: 26.61,
+                color: '#A9A9A9'
+            },
+            {
+                period: '1917-1921',
+                label: 'First Independence',
+                count: 1691,
+                percentage: 11.66,
+                color: '#E07A5F'
+            },
+            {
+                period: '1991-2015',
+                label: 'Independence Period',
+                count: 813,
+                percentage: 5.60,
+                color: '#D4634A'
+            },
+            {
+                period: '1848-1917',
+                label: 'Russian Empire',
+                count: 235,
+                percentage: 1.62,
+                color: '#8B6545'
+            }
+        ];
+
+        const totalObjects = data.reduce((sum, item) => sum + item.count, 0);
+
+        const canvas = document.getElementById('donut-canvas');
+        const ctx = canvas.getContext('2d');
+        const tooltip = document.getElementById('tooltip');
+        const container = document.getElementById('chart-container');
+
+        let hoveredSegment = null;
+        let animationProgress = 0;
+
+        // Configurar canvas
+        function resizeCanvas() {
+            const size = Math.min(container.clientWidth, container.clientHeight);
+            canvas.width = size;
+            canvas.height = size;
+            canvas.style.width = size + 'px';
+            canvas.style.height = size + 'px';
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Calcular segmentos
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const outerRadius = Math.min(centerX, centerY) * 0.85;
+        const innerRadius = outerRadius * 0.6;
+
+        let segments = [];
+        let startAngle = -Math.PI / 2 + (140 * Math.PI / 180); // startAngle=140 como en Python
+
+        data.forEach((item, index) => {
+            const sliceAngle = (item.percentage / 100) * 2 * Math.PI;
+            const endAngle = startAngle + sliceAngle;
+            const midAngle = startAngle + sliceAngle / 2;
+
+            segments.push({
+                ...item,
+                startAngle,
+                endAngle,
+                midAngle,
+                outerRadius,
+                innerRadius,
+                index
+            });
+
+            startAngle = endAngle;
+        });
+
+        // Dibujar donut
+        function drawDonut() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            segments.forEach((segment, index) => {
+                const isHovered = hoveredSegment === index;
+                const currentOuterRadius = isHovered ?
+                    segment.outerRadius * 1.05 : segment.outerRadius;
+
+                // Dibujar segmento
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, currentOuterRadius,
+                    segment.startAngle, segment.endAngle);
+                ctx.arc(centerX, centerY, segment.innerRadius,
+                    segment.endAngle, segment.startAngle, true);
+                ctx.closePath();
+
+                ctx.fillStyle = segment.color;
+                ctx.fill();
+
+                // Borde blanco
+                ctx.strokeStyle = 'white';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+
+                // Texto dentro del segmento (porcentaje y número)
+                const textRadius = (currentOuterRadius + segment.innerRadius) / 2;
+                const textX = centerX + textRadius * Math.cos(segment.midAngle);
+                const textY = centerY + textRadius * Math.sin(segment.midAngle);
+
+                ctx.fillStyle = 'white';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                // Solo mostrar texto si el porcentaje es mayor a 2%
+                if (segment.percentage > 2) {
+                    // Porcentaje
+                    ctx.font = 'bold 14px Montserrat';
+                    ctx.fillText(`${segment.percentage.toFixed(0)}%`, textX, textY - 12);
+
+                    // Número de objetos
+                    ctx.font = '14px Montserrat';
+                    ctx.fillText(segment.count.toLocaleString(), textX, textY + 10);
+                }
+
+                // Etiquetas externas
+                const labelRadius = currentOuterRadius + 30;
+                const labelX = centerX + labelRadius * Math.cos(segment.midAngle);
+                const labelY = centerY + labelRadius * Math.sin(segment.midAngle);
+
+                ctx.fillStyle = '#5C3317';
+                ctx.font = 'bold 13px Montserrat';
+                //ctx.fillText(segment.period, labelX, labelY - 8);
+
+                ctx.font = '11px Roboto';
+                //ctx.fillText(`(${segment.label})`, labelX, labelY + 8);
+            });
+        }
+
+
+        // Animación inicial
+        function animate() {
+            if (animationProgress < 1) {
+                animationProgress += 0.02;
+
+                // Animar el radio exterior
+                segments.forEach(segment => {
+                    segment.outerRadius = (Math.min(centerX, centerY) * 0.85) * animationProgress;
+                });
+
+                drawDonut();
+                requestAnimationFrame(animate);
+            } else {
+                drawDonut();
+            }
+        }
+
+        // Detectar hover
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const dx = x - centerX;
+            const dy = y - centerY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const angle = Math.atan2(dy, dx);
+
+            hoveredSegment = null;
+
+            if (distance >= innerRadius && distance <= outerRadius) {
+                segments.forEach((segment, index) => {
+                    let checkAngle = angle;
+                    if (checkAngle < segment.startAngle) {
+                        checkAngle += 2 * Math.PI;
+                    }
+
+                    if (checkAngle >= segment.startAngle && checkAngle <= segment.endAngle) {
+                        hoveredSegment = index;
+                    }
+                });
+            }
+
+            if (hoveredSegment !== null) {
+                const segment = segments[hoveredSegment];
+
+                tooltip.innerHTML = `
+                    <div class="tooltip-title">${segment.period} (${segment.label})</div>
+                    <div class="tooltip-info"><strong>${segment.count.toLocaleString()}</strong> objects</div>
+                    <div class="tooltip-info">${segment.percentage.toFixed(2)}% of total collection</div>
+                `;
+                tooltip.className = 'visible';
+
+                let tooltipX = e.clientX + 15;
+                let tooltipY = e.clientY - 15;
+
+                if (tooltipX + 220 > window.innerWidth) {
+                    tooltipX = e.clientX - 235;
+                }
+                if (tooltipY < 10) {
+                    tooltipY = e.clientY + 15;
+                }
+
+                tooltip.style.left = tooltipX + 'px';
+                tooltip.style.top = tooltipY + 'px';
+
+                canvas.style.cursor = 'pointer';
+            } else {
+                tooltip.className = '';
+                canvas.style.cursor = 'default';
+            }
+
+            drawDonut();
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            hoveredSegment = null;
+            tooltip.className = '';
+            drawDonut();
+        });
+
+        // Soporte táctil
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const rect = canvas.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+
+            const dx = x - centerX;
+            const dy = y - centerY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const angle = Math.atan2(dy, dx);
+
+            if (distance >= innerRadius && distance <= outerRadius) {
+                segments.forEach((segment, index) => {
+                    let checkAngle = angle;
+                    if (checkAngle < segment.startAngle) {
+                        checkAngle += 2 * Math.PI;
+                    }
+
+                    if (checkAngle >= segment.startAngle && checkAngle <= segment.endAngle) {
+                        hoveredSegment = index;
+
+                        tooltip.innerHTML = `
+                            <div class="tooltip-title">${segment.period} (${segment.label})</div>
+                            <div class="tooltip-info"><strong>${segment.count.toLocaleString()}</strong> objects</div>
+                            <div class="tooltip-info">${segment.percentage.toFixed(2)}% of total collection</div>
+                        `;
+                        tooltip.className = 'visible';
+
+                        let tooltipX = touch.clientX + 15;
+                        let tooltipY = touch.clientY - 15;
+
+                        if (tooltipX + 220 > window.innerWidth) {
+                            tooltipX = touch.clientX - 235;
+                        }
+                        if (tooltipY < 10) {
+                            tooltipY = touch.clientY + 15;
+                        }
+
+                        tooltip.style.left = tooltipX + 'px';
+                        tooltip.style.top = tooltipY + 'px';
+                    }
+                });
+            }
+
+            drawDonut();
+        });
+
+        canvas.addEventListener('touchend', () => {
+            hoveredSegment = null;
+            tooltip.className = '';
+            drawDonut();
+        });
+
+        // Iniciar animación
+        animate();
+    </script>
+</body>
+
+</html>
