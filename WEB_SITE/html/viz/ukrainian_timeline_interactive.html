@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukrainian Historical Periods Timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Canvas para bolitas animadas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #5C3317;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #5C3317;
+            text-align: center;
+            margin-bottom: 100px;
+            font-style: italic;
+        }
+
+        /* Timeline container - horizontal por defecto */
+        .timeline {
+            position: relative;
+            padding: 100px 0 40px 0;
+        }
+
+        /* Línea principal horizontal */
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background: #D4634A;
+            transform: translateY(-50%);
+        }
+
+        .timeline-items {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 50px;
+        }
+
+        .timeline-item {
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Punto en la línea */
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: #C94A38;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.3);
+            background: #E85D4A;
+        }
+
+        /* Línea conectora punteada */
+        .timeline-connector {
+            position: absolute;
+            width: 2px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #D4634A,
+                #D4634A 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            top: 8px;
+            opacity: 0.6;
+        }
+
+        .timeline-connector.top {
+            height: 80px;
+            transform: translateY(-88px);
+        }
+
+        .timeline-connector.bottom {
+            height: 80px;
+            transform: translateY(8px);
+        }
+
+        /* Contenido del periodo */
+        .timeline-content {
+            position: absolute;
+            text-align: center;
+            width: 150px;
+        }
+
+        .timeline-content.top {
+            bottom: 100%;
+            margin-bottom: 90px;
+        }
+
+        .timeline-content.bottom {
+            top: 100%;
+            margin-top: 90px;
+        }
+
+        .period-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #5C3317;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .period-date {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 0.75rem;
+            color: #8B6545;
+            font-style: italic;
+        }
+
+        /* Tooltip al hover */
+        .timeline-item .tooltip {
+            position: absolute;
+            background: rgba(92, 51, 23, 0.95);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+            z-index: 100;
+            top: -60px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .timeline-item:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Responsive - Mobile vertical */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .subtitle {
+                margin-bottom: 80px;
+            }
+
+            .timeline {
+                padding: 80px 0 20px 0;
+            }
+
+            /* Timeline vertical */
+            .timeline-line {
+                top: 20px;
+                bottom: 20px;
+                left: 50%;
+                right: auto;
+                width: 3px;
+                height: auto;
+                transform: translateX(-50%);
+            }
+
+            .timeline-items {
+                flex-direction: column;
+                padding: 20px 0;
+                align-items: center;
+            }
+
+            .timeline-item {
+                width: 100%;
+                max-width: 500px;
+                margin: 30px 0;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .timeline-connector.top,
+            .timeline-connector.bottom {
+                width: 80px;
+                height: 2px;
+                background: repeating-linear-gradient(
+                    to right,
+                    #D4634A,
+                    #D4634A 5px,
+                    transparent 5px,
+                    transparent 10px
+                );
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .timeline-connector.top {
+                right: 100%;
+                margin-right: 8px;
+            }
+
+            .timeline-connector.bottom {
+                left: 100%;
+                margin-left: 8px;
+            }
+
+            .timeline-content {
+                position: absolute;
+                width: 200px;
+                margin: 0;
+            }
+
+            .timeline-content.top {
+                bottom: auto;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-bottom: 0;
+                text-align: right;
+                right: calc(100% + 88px);
+            }
+
+            .timeline-content.bottom {
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 0;
+                text-align: left;
+                left: calc(100% + 88px);
+            }
+
+            .period-name {
+                font-size: 1rem;
+            }
+
+            .period-date {
+                font-size: 0.85rem;
+            }
+
+            .timeline-item .tooltip {
+                top: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+
+            .subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 60px;
+            }
+
+            .period-name {
+                font-size: 0.85rem;
+            }
+
+            .period-date {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Efecto de entrada */
+        .timeline-item {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Delay progresivo para cada item */
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.15s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.25s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.35s; }
+        .timeline-item:nth-child(7) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(8) { animation-delay: 0.45s; }
+        .timeline-item:nth-child(9) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(10) { animation-delay: 0.55s; }
+        .timeline-item:nth-child(11) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(12) { animation-delay: 0.65s; }
+        .timeline-item:nth-child(13) { animation-delay: 0.7s; }
+        .timeline-item:nth-child(14) { animation-delay: 0.75s; }
+        .timeline-item:nth-child(15) { animation-delay: 0.8s; }
+        .timeline-item:nth-child(16) { animation-delay: 0.85s; }
+        .timeline-item:nth-child(17) { animation-delay: 0.9s; }
+        .timeline-item:nth-child(18) { animation-delay: 0.95s; }
+        .timeline-item:nth-child(19) { animation-delay: 1s; }
+    </style>
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="container">
+        <h1>Ukrainian Historical Periods Timeline</h1>
+        <p class="subtitle">From Paleolithic to Present Day</p>
+
+        <div class="timeline">
+            <div class="timeline-line"></div>
+            <div class="timeline-items" id="timeline-items"></div>
+        </div>
+    </div>
+
+    <script>
+        // Datos de los periodos
+        const periods = [
+            {name: "Paleolithic<br>Period", date: "c. 1.4M – 10,000 BC", position: "top"},
+            {name: "Mesolithic", date: "c. 10,000 – 7000 BC", position: "bottom"},
+            {name: "Pre-Neolithic", date: "c. 7000 – 5050 BC", position: "top"},
+            {name: "Neolithic<br>Period", date: "c. 5050 – 2950 BC", position: "bottom"},
+            {name: "Bronze Age", date: "c. 4500 – 1950 BC", position: "top"},
+            {name: "Iron Age", date: "c. 1200 – 700 BC", position: "bottom"},
+            {name: "Scythian–Sarmatian<br>Era", date: "c. 700 – 250 BC", position: "top"},
+            {name: "Greek and<br>Roman Period", date: "250 BC – 375 AD", position: "bottom"},
+            {name: "Migration<br>Period", date: "370s – 7th c. AD", position: "top"},
+            {name: "Early Medieval –<br>Bulgar & Khazar", date: "7th – 9th centuries", position: "bottom"},
+            {name: "Kievan Rus'<br>Period", date: "839 – 1240", position: "top"},
+            {name: "Mongol Invasion<br>& Domination", date: "1239 – 14th c.", position: "bottom"},
+            {name: "Kingdom of<br>Galicia–Volhynia", date: "1197 – 1340", position: "top"},
+            {name: "Lithuanian and<br>Polish Period", date: "1340 – 1648", position: "bottom"},
+            {name: "Cossack<br>Hetmanate", date: "1648 – 1764", position: "top"},
+            {name: "Ukraine under<br>Russian Empire", date: "1764 – 1917", position: "bottom"},
+            {name: "First<br>Independence", date: "1917 – 1921", position: "top"},
+            {name: "Soviet<br>Period", date: "1921 – 1991", position: "bottom"},
+            {name: "Independence<br>Period", date: "1991 – present", position: "top"}
+        ];
+
+        // Generar timeline items
+        const timelineItems = document.getElementById('timeline-items');
+        periods.forEach((period, index) => {
+            const item = document.createElement('div');
+            item.className = 'timeline-item';
+            item.innerHTML = `
+                <div class="timeline-connector ${period.position}"></div>
+                <div class="timeline-content ${period.position}">
+                    <div class="period-name">${period.name}</div>
+                    <div class="period-date">${period.date}</div>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="tooltip">Click to explore this period</div>
+            `;
+            timelineItems.appendChild(item);
+
+            // Click handler
+            item.addEventListener('click', () => {
+                alert(`Exploring: ${period.name.replace(/<br>/g, ' ')}\n${period.date}`);
+            });
+        });
+
+        // Sistema de partículas animadas (objetos culturales flotantes)
+        class Particle {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.reset();
+                this.y = Math.random() * canvas.height;
+            }
+
+            reset() {
+                this.x = Math.random() * this.canvas.width;
+                this.y = -10;
+                this.size = Math.random() * 4 + 2;
+                this.speedY = Math.random() * 0.5 + 0.2;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.opacity = Math.random() * 0.3 + 0.2;
+                this.color = `rgba(212, 99, 74, ${this.opacity})`;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+
+                // Pequeño movimiento ondulatorio
+                this.x += Math.sin(this.y * 0.01) * 0.3;
+
+                if (this.y > this.canvas.height + 10) {
+                    this.reset();
+                }
+
+                if (this.x < -10 || this.x > this.canvas.width + 10) {
+                    this.x = Math.random() * this.canvas.width;
+                }
+            }
+
+            draw(ctx) {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Inicializar canvas de partículas
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.documentElement.scrollHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Crear partículas
+        const particles = [];
+        const particleCount = 40;
+        
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle(canvas));
+        }
+
+        // Animar partículas
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw(ctx);
+            });
+            
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Actualizar altura del canvas al hacer scroll
+        window.addEventListener('scroll', () => {
+            if (canvas.height < document.documentElement.scrollHeight) {
+                resizeCanvas();
+            }
+        });
+    </script>
+</body>
+</html>
