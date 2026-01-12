@@ -23,9 +23,9 @@ def parse_coords(val):
     return None
 
 def categorize_distance(dist_m):
-    if dist_m <= 100: return "0-100m: Coincidenza (Stesso Sito)"
-    elif dist_m <= 500: return "100-500m: Pericolo Immediato"
-    return "500-1000m: Prossimità Elevata"
+    if dist_m <= 100: return "0 - 100m"
+    elif dist_m <= 500: return "100 - 500m"
+    return "500 - 1000m"
 
 def main():
     # --- CARICAMENTO DATI ---
@@ -78,12 +78,12 @@ def main():
     ).encode(
         x=alt.X('count():Q', title="Numero di Siti Danneggiati"),
         y=alt.Y('Fascia_Distanza:N', 
-                sort=["0-100m: Coincidenza (Stesso Sito)", 
-                      "100-500m: Pericolo Immediato", 
-                      "500-1000m: Prossimità Elevata"],
+                sort=["0 - 100m", 
+                      "100 - 500m", 
+                      "500 - 1000m"],
                 title=None),
         color=alt.Color('Fascia_Distanza:N', scale=alt.Scale(
-            domain=["0-100m: Coincidenza (Stesso Sito)", "100-500m: Pericolo Immediato", "500-1000m: Prossimità Elevata"],
+            domain=["0 - 100m", "100 - 500m", "500 - 1000m"],
             range=['#7b241c', '#c0392b', '#e67e22']
         ), legend=None),
         tooltip=[
@@ -149,12 +149,9 @@ def main():
 <body>
   <div class="viz-wrapper">
     <h1>
-      Incrocio Spaziale: <span class="highlight-red">Siti UNESCO</span> sotto minaccia diretta
-    </h1>
+Spatial Intersection: UNESCO Sites Under Threat    </h1>
     <p class="subtitle">
-      Analisi delle segnalazioni di danno verificate che ricadono entro un raggio di 1 km dai siti UNESCO 
-      (World Heritage e Tentative List). La prossimità estrema indica casi in cui il danno ha colpito direttamente 
-      l'area protetta o le sue immediate vicinanze.
+      Analysis of verified damage reports occurring within a 1 km radius of UNESCO sites (World Heritage and Tentative Lists). Extreme proximity highlights cases where damage occurred directly within or in the immediate vicinity of the protected area.
     </p>
 
     <div id="vis"></div>
