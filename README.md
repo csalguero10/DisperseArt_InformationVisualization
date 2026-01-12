@@ -10,7 +10,9 @@ This repository contains the final project developed for the course
 The project investigates patterns of cultural destruction, looting, and long-term cultural appropriation in Ukraine through the integration and visualization of institutional datasets.  
 Using a data-driven approach, the website explores how different forms of cultural harm unfold across time, space, and political contexts.
 
-🔗 Project website: *(link to be added)*
+🔗 Project website: https://csalguero10.github.io/DisperseArt_InformationVisualization/WEB_SITE/html/architecture.html
+
+🔗 Project notebook: https://colab.research.google.com/drive/1gtZOA8Lxsj58iOOaAueS3Mk1qSnBT414?usp=sharing
 
 ---
 
@@ -53,7 +55,6 @@ The project integrates open institutional datasets released under the following 
 - [ACLED Conflict Events Dataset](https://acleddata.com/conflict-data/data-export-tool?%2Fviews%2Fajax%3Fevent_date_from=2014-01-17&event_date_to=2024-12-17&event_type%5BExplosions%2FRemote%20violence%5D=Explosions%2FRemote%20violence&event_type%5BRiots%5D=Riots&sub_event_type%5BLooting%2Fproperty%20destruction%5D=Looting%2Fproperty%20destruction&region%5B12%5D=12&country%5B804%5D=804&fields_on%5Bevent_id_cnty%5D=event_id_cnty&viewsreference%5Breload%5D=eJxdi8EKwjAQRP9lzx5stVDzKyLLSsa6kMaQLJUi_rspORQ8zGHmvfkQotwDPBeYaZwKuevtQEkyonGN2sq2JpDbRpmypCf9C-or7k_jOOzooQieo8zbtZVF8d6FjEWLvmJ7d_25Gy6VNlUNM3sEE3LH7w-71Dq1&page=2):   Data accessed from the Armed Conflict Location & Event Data Project (ACLED).  
   Use of the data is governed by ACLED’s End User License Agreement and Content Usage Terms.
 - [Hermitage Museum Collection (Texty.org.ua archive)](https://github.com/texty/datasets/tree/master/russian_museums): CC BY 
-- WikiArt Ukrainian Artists Database: artist metadata used for academic purposes; images not redistributed
 - Wikidata Ukrainian Artists Database: CC0
 - [ICOM Red List of Ukraine](https://icom.museum/en/news/launch-icom-red-list-ukraine/): Reference information sourced from the International Council of Museums (ICOM).  
   The Red List is used for contextual and classificatory purposes only.  
