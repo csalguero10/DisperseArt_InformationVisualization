@@ -341,6 +341,7 @@
         // Detectar hover
         canvas.addEventListener('mousemove', (e) => {
             const rect = canvas.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
@@ -374,14 +375,37 @@
                 `;
                 tooltip.className = 'visible';
 
-                let tooltipX = e.clientX + 15;
-                let tooltipY = e.clientY - 15;
+                // Calcular posición relativa al contenedor
+                const mouseX = e.clientX - containerRect.left;
+                const mouseY = e.clientY - containerRect.top;
+                
+                // Obtener dimensiones del tooltip (aproximadas)
+                const tooltipWidth = 220;
+                const tooltipHeight = 100;
+                const offset = 15;
 
-                if (tooltipX + 220 > window.innerWidth) {
-                    tooltipX = e.clientX - 235;
+                // Posición inicial (derecha y arriba del cursor)
+                let tooltipX = mouseX + offset;
+                let tooltipY = mouseY - offset;
+
+                // Verificar límite derecho
+                if (tooltipX + tooltipWidth > containerRect.width) {
+                    tooltipX = mouseX - tooltipWidth - offset;
                 }
-                if (tooltipY < 10) {
-                    tooltipY = e.clientY + 15;
+
+                // Verificar límite izquierdo
+                if (tooltipX < 0) {
+                    tooltipX = offset;
+                }
+
+                // Verificar límite superior
+                if (tooltipY < 0) {
+                    tooltipY = mouseY + offset;
+                }
+
+                // Verificar límite inferior
+                if (tooltipY + tooltipHeight > containerRect.height) {
+                    tooltipY = containerRect.height - tooltipHeight - offset;
                 }
 
                 tooltip.style.left = tooltipX + 'px';
@@ -407,6 +431,7 @@
             e.preventDefault();
             const touch = e.touches[0];
             const rect = canvas.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
             const x = touch.clientX - rect.left;
             const y = touch.clientY - rect.top;
 
@@ -432,14 +457,37 @@
                         `;
                         tooltip.className = 'visible';
 
-                        let tooltipX = touch.clientX + 15;
-                        let tooltipY = touch.clientY - 15;
+                        // Calcular posición relativa al contenedor
+                        const touchX = touch.clientX - containerRect.left;
+                        const touchY = touch.clientY - containerRect.top;
+                        
+                        // Obtener dimensiones del tooltip (aproximadas)
+                        const tooltipWidth = 220;
+                        const tooltipHeight = 100;
+                        const offset = 15;
 
-                        if (tooltipX + 220 > window.innerWidth) {
-                            tooltipX = touch.clientX - 235;
+                        // Posición inicial (derecha y arriba del cursor)
+                        let tooltipX = touchX + offset;
+                        let tooltipY = touchY - offset;
+
+                        // Verificar límite derecho
+                        if (tooltipX + tooltipWidth > containerRect.width) {
+                            tooltipX = touchX - tooltipWidth - offset;
                         }
-                        if (tooltipY < 10) {
-                            tooltipY = touch.clientY + 15;
+
+                        // Verificar límite izquierdo
+                        if (tooltipX < 0) {
+                            tooltipX = offset;
+                        }
+
+                        // Verificar límite superior
+                        if (tooltipY < 0) {
+                            tooltipY = touchY + offset;
+                        }
+
+                        // Verificar límite inferior
+                        if (tooltipY + tooltipHeight > containerRect.height) {
+                            tooltipY = containerRect.height - tooltipHeight - offset;
                         }
 
                         tooltip.style.left = tooltipX + 'px';
