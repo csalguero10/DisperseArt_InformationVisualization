@@ -338,6 +338,7 @@
 
         render.canvas.addEventListener('mousemove', (e) => {
             const rect = render.canvas.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
             const mouseX = e.clientX - rect.left;
             const mouseY = e.clientY - rect.top;
 
@@ -364,18 +365,37 @@
                 `;
                 tooltip.className = 'visible';
                 
-                // Ajustar posición del tooltip para evitar que salga de pantalla
-                let tooltipX = e.clientX + 15;
-                let tooltipY = e.clientY - 15;
+                // Calcular posición relativa al contenedor
+                const cursorX = e.clientX - containerRect.left;
+                const cursorY = e.clientY - containerRect.top;
                 
-                // Si está muy a la derecha, mover a la izquierda
-                if (tooltipX + 220 > window.innerWidth) {
-                    tooltipX = e.clientX - 235;
+                // Dimensiones del tooltip (aproximadas)
+                const tooltipWidth = 220;
+                const tooltipHeight = 100;
+                const offset = 15;
+
+                // Posición inicial (derecha y arriba del cursor)
+                let tooltipX = cursorX + offset;
+                let tooltipY = cursorY - offset;
+
+                // Verificar límite derecho
+                if (tooltipX + tooltipWidth > containerRect.width) {
+                    tooltipX = cursorX - tooltipWidth - offset;
                 }
-                
-                // Si está muy arriba, mover hacia abajo
-                if (tooltipY < 10) {
-                    tooltipY = e.clientY + 15;
+
+                // Verificar límite izquierdo
+                if (tooltipX < 0) {
+                    tooltipX = offset;
+                }
+
+                // Verificar límite superior
+                if (tooltipY < 0) {
+                    tooltipY = cursorY + offset;
+                }
+
+                // Verificar límite inferior
+                if (tooltipY + tooltipHeight > containerRect.height) {
+                    tooltipY = containerRect.height - tooltipHeight - offset;
                 }
                 
                 tooltip.style.left = tooltipX + 'px';
@@ -456,6 +476,7 @@
             e.preventDefault();
             const touch = e.touches[0];
             const rect = render.canvas.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
             const touchX = touch.clientX - rect.left;
             const touchY = touch.clientY - rect.top;
 
@@ -482,14 +503,37 @@
                 `;
                 tooltip.className = 'visible';
                 
-                let tooltipX = touch.clientX + 15;
-                let tooltipY = touch.clientY - 15;
+                // Calcular posición relativa al contenedor
+                const cursorX = touch.clientX - containerRect.left;
+                const cursorY = touch.clientY - containerRect.top;
                 
-                if (tooltipX + 220 > window.innerWidth) {
-                    tooltipX = touch.clientX - 235;
+                // Dimensiones del tooltip (aproximadas)
+                const tooltipWidth = 220;
+                const tooltipHeight = 100;
+                const offset = 15;
+
+                // Posición inicial (derecha y arriba del cursor)
+                let tooltipX = cursorX + offset;
+                let tooltipY = cursorY - offset;
+
+                // Verificar límite derecho
+                if (tooltipX + tooltipWidth > containerRect.width) {
+                    tooltipX = cursorX - tooltipWidth - offset;
                 }
-                if (tooltipY < 10) {
-                    tooltipY = touch.clientY + 15;
+
+                // Verificar límite izquierdo
+                if (tooltipX < 0) {
+                    tooltipX = offset;
+                }
+
+                // Verificar límite superior
+                if (tooltipY < 0) {
+                    tooltipY = cursorY + offset;
+                }
+
+                // Verificar límite inferior
+                if (tooltipY + tooltipHeight > containerRect.height) {
+                    tooltipY = containerRect.height - tooltipHeight - offset;
                 }
                 
                 tooltip.style.left = tooltipX + 'px';
