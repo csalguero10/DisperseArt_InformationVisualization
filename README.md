@@ -1,5 +1,5 @@
- ## When Culture Becomes a Target  
-### Destruction, looting, and cultural appropriation in Ukraine across history and war  
+ ## Destruction, looting, and cultural appropriation in Ukraine across history and war  
+### When Culture Becomes a Target
 
 This repository contains the final project developed for the course  
 [Information Visualization](https://www.unibo.it/en/study/course-units-transferable-skills-moocs/course-unit-catalogue/course-unit/2023/467047)  
